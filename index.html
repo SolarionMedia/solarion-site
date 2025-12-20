@@ -2,37 +2,48 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Solarion - AI-Powered Digital Studio</title>
+  <title>Solarion — AI Digital Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(1200px at 20% 10%, #1a1f3c, #0f1115);
       color: #ffffff;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     header, footer {
       text-align: center;
       padding: 30px 20px;
-      background: #151821;
+      background: rgba(21, 24, 33, 0.8);
+      backdrop-filter: blur(6px);
     }
 
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
-    h1, h2 {
-      color: #ffffff;
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 60px;
+      color: #9db4ff;
     }
 
     p, li {
       color: #cfcfcf;
+      font-size: 17px;
     }
 
     ul, ol {
@@ -47,7 +58,72 @@
     .lang a {
       color: #7aa2ff;
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 6px;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #151821;
+      border-radius: 14px;
+      padding: 24px;
+      border: 1px solid #1f2433;
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #7aa2ff;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    .cta {
+      margin-top: 60px;
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, #1f2b6d, #151821);
+      border-radius: 16px;
+    }
+
+    .cta h2 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    .cta a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #7aa2ff;
+      color: #0f1115;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    footer {
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
@@ -56,14 +132,14 @@
 
 <header>
   <h1>Solarion</h1>
-  <p>AI-Powered Digital Studio for content, automation and growth.</p>
+  <p>AI-Powered Digital Studio for content, automation and growth</p>
   <div class="lang">
     <a href="#">EN</a> | <a href="#">RU</a>
   </div>
 </header>
 
-<section>
-  <h1>Solarion — AI-студия для роста бизнеса</h1>
+<section class="hero">
+  <h1>AI-студия для роста бизнеса</h1>
 
   <p>
     Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы
@@ -71,30 +147,42 @@
   </p>
 
   <p>
-    Без лишних инструментов.<br>
-    Без хайпа.<br>
-    Только то, что реально работает.
+    No hype. No chaos. <br>
+    Only systems that actually work.
   </p>
+</section>
 
+<section>
   <h2>Что мы делаем</h2>
+
   <p>
     Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг
-    и автоматизацию в одну понятную систему.
+    и автоматизацию в одну понятную систему, которая работает на результат.
   </p>
 
-  <h2>Наши направления</h2>
-  <ul>
-    <li><strong>AI-контент</strong> — тексты, сценарии, офферы</li>
-    <li><strong>AI-маркетинг</strong> — упаковка, реклама, аналитика</li>
-    <li><strong>AI-автоматизация</strong> — заявки, коммуникации, процессы</li>
-  </ul>
+  <div class="features">
+    <div class="card">
+      <h3>AI Content</h3>
+      <p>Тексты, сценарии и офферы, заточенные под цели бизнеса.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Marketing</h3>
+      <p>Позиционирование, реклама и аналитика с фокусом на лиды.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Automation</h3>
+      <p>Автоматизация заявок, коммуникаций и внутренних процессов.</p>
+    </div>
+  </div>
 
   <h2>Как мы работаем</h2>
   <ol>
-    <li>Анализируем бизнес</li>
+    <li>Анализируем бизнес и цели</li>
     <li>Проектируем AI-систему</li>
     <li>Внедряем и настраиваем</li>
-    <li>Улучшаем по данным</li>
+    <li>Оптимизируем по данным</li>
   </ol>
 
   <p>
@@ -104,13 +192,13 @@
     </strong>
   </p>
 
-  <h2>С чего начать</h2>
-  <p>
-    AI Strategy & Setup — быстрый и безопасный вход в AI
-    без лишних рисков.
-  </p>
-
-  <p><strong>Свяжитесь с нами — начнём со стратегии.</strong></p>
+  <div class="cta">
+    <h2>С чего начать</h2>
+    <p>
+      AI Strategy & Setup — безопасный вход в AI без лишних рисков.
+    </p>
+    <a href="#">Start with strategy</a>
+  </div>
 </section>
 
 <footer>
