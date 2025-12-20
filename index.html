@@ -8,207 +8,93 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg-main: #0f1115;
-      --bg-card: #151821;
-      --accent: #7aa2ff;
-      --accent-soft: rgba(122,162,255,0.25);
-      --text-main: #ffffff;
-      --text-muted: #cfcfcf;
+    :root{
+      --bg:#0f1115;
+      --card:#151821;
+      --accent:#7aa2ff;
+      --text:#ffffff;
+      --muted:#cfcfcf;
     }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background:
-        radial-gradient(1200px at 15% 10%, #1a1f3c, transparent),
-        radial-gradient(800px at 85% 20%, #1f2b6d, transparent),
-        var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.7;
-      scroll-behavior: smooth;
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:radial-gradient(1200px at 15% 10%,#1a1f3c,transparent),var(--bg);
+      color:var(--text);
+      line-height:1.7;
     }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(15,17,21,0.75);
-      backdrop-filter: blur(10px);
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 1px solid #1f2433;
+    header{
+      position:sticky;top:0;
+      background:rgba(15,17,21,.8);
+      backdrop-filter:blur(10px);
+      padding:28px 20px;
+      text-align:center;
+      border-bottom:1px solid #1f2433;
     }
-
-    header h1 {
-      font-size: 42px;
-      margin: 0;
-      letter-spacing: 0.5px;
+    header h1{margin:0;font-size:42px;}
+    header p{color:#aaa;margin-top:6px;font-size:15px;}
+    .lang a{color:var(--accent);margin:0 8px;cursor:pointer;font-weight:600}
+    section{max-width:1100px;margin:0 auto;padding:80px 20px;}
+    .hero h1{
+      font-size:52px;
+      background:linear-gradient(135deg,#fff,var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
-
-    header p {
-      margin-top: 8px;
-      color: #a0a0a0;
-      font-size: 15px;
+    h2{color:var(--accent);margin-top:80px;font-size:34px}
+    p{color:var(--muted);max-width:760px}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;margin-top:40px
     }
-
-    .lang {
-      margin-top: 10px;
-      font-size: 14px;
+    .card{
+      background:linear-gradient(180deg,#171b27,#121521);
+      border:1px solid #1f2433;
+      border-radius:18px;
+      padding:32px;
+      transition:.3s;
     }
-
-    .lang a {
-      color: var(--accent);
-      margin: 0 8px;
-      font-weight: 600;
-      cursor: pointer;
+    .card:hover{
+      border-color:var(--accent);
+      box-shadow:0 15px 40px rgba(122,162,255,.25)
     }
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 20px;
+    .price{font-size:28px;color:#fff;margin:16px 0}
+    .cta{
+      margin-top:100px;
+      padding:60px 30px;
+      text-align:center;
+      border-radius:22px;
+      background:linear-gradient(135deg,#1f2b6d,#141826);
+      border:1px solid #2a3560;
     }
-
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #ffffff, var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:16px 34px;
+      background:linear-gradient(135deg,var(--accent),#5f8ee0);
+      color:#0f1115;
+      border-radius:14px;
+      font-weight:700;
+      text-decoration:none;
     }
-
-    .hero p {
-      max-width: 700px;
-      font-size: 18px;
-      color: var(--text-muted);
+    form{
+      max-width:520px;
+      margin:40px auto 0;
+      display:grid;
+      gap:14px;
     }
-
-    h2 {
-      margin-top: 80px;
-      font-size: 34px;
-      color: var(--accent);
+    input,textarea{
+      padding:14px;
+      border-radius:10px;
+      border:1px solid #1f2433;
+      background:#0f1115;
+      color:#fff;
     }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #171b27, #121521);
-      border-radius: 18px;
-      padding: 32px;
-      border: 1px solid #1f2433;
-      position: relative;
-      overflow: hidden;
-      transform: translateY(40px);
-      opacity: 0;
-      transition: all 0.6s ease;
-    }
-
-    .card.visible {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(600px at 10% 10%, var(--accent-soft), transparent);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 15px 40px rgba(122,162,255,0.25);
-    }
-
-    .icon {
-      width: 42px;
-      height: 42px;
-      margin-bottom: 16px;
-      fill: var(--accent);
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .card p {
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    ol {
-      margin-top: 30px;
-      padding-left: 20px;
-    }
-
-    ol li {
-      margin-bottom: 14px;
-      color: var(--text-muted);
-    }
-
-    .cta {
-      margin-top: 100px;
-      padding: 60px 30px;
-      border-radius: 22px;
-      background:
-        linear-gradient(135deg, #1f2b6d, #141826);
-      text-align: center;
-      border: 1px solid #2a3560;
-    }
-
-    .cta h2 {
-      margin-top: 0;
-      color: #ffffff;
-    }
-
-    .cta p {
-      max-width: 600px;
-      margin: 20px auto 0;
-    }
-
-    .cta a {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 18px 36px;
-      background: linear-gradient(135deg, var(--accent), #5f8ee0);
-      color: #0f1115;
-      border-radius: 14px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(122,162,255,0.45);
-    }
-
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      color: #888;
-      border-top: 1px solid #1f2433;
-      background: rgba(15,17,21,0.8);
-    }
-
-    @media(max-width:768px){
-      .hero h1 { font-size: 40px; }
-      h2 { font-size: 28px; }
+    footer{
+      padding:40px 20px;
+      text-align:center;
+      color:#888;
+      border-top:1px solid #1f2433;
     }
   </style>
 </head>
@@ -216,131 +102,70 @@
 <body>
 
 <header>
-  <h1 data-key="header_h1">Solarion</h1>
-  <p data-key="header_p">AI-студия для контента, автоматизации и роста</p>
+  <h1>Solarion</h1>
+  <p>AI-студия для контента, автоматизации и роста</p>
   <div class="lang">
-    <a onclick="setLang('ru')">RU</a> | <a onclick="setLang('en')">EN</a>
+    <a href="#">RU</a> | <a href="#">EN</a>
   </div>
 </header>
 
 <section class="hero">
-  <h1 data-key="hero_h1">AI-студия для роста бизнеса</h1>
-  <p data-key="hero_p1">Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы и экономят время владельцам бизнеса.</p>
-  <p data-key="hero_p2">Без лишних инструментов. Без хайпа. Только то, что реально работает.</p>
+  <h1>AI-студия для роста бизнеса</h1>
+  <p>Мы строим AI-системы, которые приводят клиентов, автоматизируют процессы и масштабируют бизнес.</p>
 </section>
 
 <section>
-  <h2 data-key="what_h2">Что мы делаем</h2>
-  <p data-key="what_p">Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг и автоматизацию в одну понятную систему.</p>
+  <h2>Пакеты услуг</h2>
 
-  <div class="features">
+  <div class="grid">
     <div class="card">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v4H4zM4 10h16v10H4z"/></svg>
-      <h3 data-key="f1_h3">AI Контент</h3>
-      <p data-key="f1_p">Тексты, сценарии и офферы, которые реально продают.</p>
+      <h3>Start</h3>
+      <div class="price">$300–500</div>
+      <p>AI-контент, базовая автоматизация, стратегия запуска.</p>
     </div>
 
     <div class="card">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M3 12l18-9-4 9 4 9z"/></svg>
-      <h3 data-key="f2_h3">AI Маркетинг</h3>
-      <p data-key="f2_p">Позиционирование, реклама и аналитика с фокусом на лиды.</p>
+      <h3>Growth</h3>
+      <div class="price">$800–1500</div>
+      <p>Контент + маркетинг + автоворонка заявок.</p>
     </div>
 
     <div class="card">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
-      <h3 data-key="f3_h3">AI Автоматизация</h3>
-      <p data-key="f3_p">Автоматизация заявок, коммуникаций и процессов.</p>
+      <h3>Scale</h3>
+      <div class="price">$2500+</div>
+      <p>Полная AI-система под бизнес, аналитику и рост.</p>
     </div>
-  </div>
-
-  <h2 data-key="work_h2">Как мы работаем</h2>
-  <ol>
-    <li data-key="w1">Анализируем бизнес и цели</li>
-    <li data-key="w2">Проектируем AI-систему</li>
-    <li data-key="w3">Внедряем и настраиваем</li>
-    <li data-key="w4">Улучшаем по данным</li>
-  </ol>
-
-  <div class="cta">
-    <h2 data-key="cta_h2">С чего начать</h2>
-    <p data-key="cta_p">AI Strategy & Setup — безопасный вход в AI без лишних рисков.</p>
-    <a data-key="cta_btn" href="#">Начать стратегию</a>
   </div>
 </section>
 
+<section>
+  <h2>Для агентств и фаундеров</h2>
+  <p>
+    Мы работаем как AI-партнёр: закрываем контент, автоматизацию и процессы,
+    чтобы вы масштабировались без увеличения команды.
+  </p>
+</section>
+
+<section class="cta">
+  <h2>Оставить заявку</h2>
+  <p>Свяжемся с вами в течение 24 часов.</p>
+
+  <form action="mailto:solarionmedia@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="4" placeholder="Коротко о задаче"></textarea>
+    <button class="btn" type="submit">Отправить</button>
+  </form>
+
+  <p style="margin-top:20px">
+    Telegram / A1: <strong>+375-29-690-92-00</strong>
+  </p>
+</section>
+
 <footer>
-  <span data-key="footer">© Solarion Media. Все права защищены.</span>
+  © Solarion Media. All rights reserved.
 </footer>
-
-<script>
-const texts = {
-  ru: {
-    header_h1:"Solarion",
-    header_p:"AI-студия для контента, автоматизации и роста",
-    hero_h1:"AI-студия для роста бизнеса",
-    hero_p1:"Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы и экономят время владельцам бизнеса.",
-    hero_p2:"Без лишних инструментов. Без хайпа. Только то, что реально работает.",
-    what_h2:"Что мы делаем",
-    what_p:"Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг и автоматизацию в одну понятную систему.",
-    f1_h3:"AI Контент",
-    f1_p:"Тексты, сценарии и офферы, которые реально продают.",
-    f2_h3:"AI Маркетинг",
-    f2_p:"Позиционирование, реклама и аналитика с фокусом на лиды.",
-    f3_h3:"AI Автоматизация",
-    f3_p:"Автоматизация заявок, коммуникаций и процессов.",
-    work_h2:"Как мы работаем",
-    w1:"Анализируем бизнес и цели",
-    w2:"Проектируем AI-систему",
-    w3:"Внедряем и настраиваем",
-    w4:"Улучшаем по данным",
-    cta_h2:"С чего начать",
-    cta_p:"AI Strategy & Setup — безопасный вход в AI без лишних рисков.",
-    cta_btn:"Начать стратегию",
-    footer:"© Solarion Media. Все права защищены."
-  },
-  en: {
-    header_h1:"Solarion",
-    header_p:"AI studio for content, automation and growth",
-    hero_h1:"AI Studio for Business Growth",
-    hero_p1:"We build AI systems that bring clients, automate processes, and save business owners time.",
-    hero_p2:"No hype. No chaos. Only systems that actually work.",
-    what_h2:"What we do",
-    what_p:"Solarion is a universal AI studio combining content, marketing and automation into one clear system.",
-    f1_h3:"AI Content",
-    f1_p:"Texts, scripts and offers that convert.",
-    f2_h3:"AI Marketing",
-    f2_p:"Positioning, ads and analytics focused on real leads.",
-    f3_h3:"AI Automation",
-    f3_p:"Automation of leads, communications and processes.",
-    work_h2:"How we work",
-    w1:"We analyze business and goals",
-    w2:"We design AI systems",
-    w3:"We implement and configure",
-    w4:"We improve based on data",
-    cta_h2:"Where to start",
-    cta_p:"AI Strategy & Setup — safe entry into AI without unnecessary risks.",
-    cta_btn:"Start strategy",
-    footer:"© Solarion Media. All rights reserved."
-  }
-};
-
-function setLang(lang){
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    const key = el.getAttribute("data-key");
-    el.innerText = texts[lang][key];
-  });
-}
-
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-    }
-  });
-},{ threshold:0.2 });
-
-document.querySelectorAll(".card").forEach(card=>observer.observe(card));
-</script>
 
 </body>
 </html>
+
