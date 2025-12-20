@@ -31,179 +31,140 @@
       padding: 60px 20px;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { margin-top: 60px; color: #9db4ff; }
+    p, li { color: #cfcfcf; font-size: 17px; }
+    ul, ol { margin-left: 20px; }
 
-    h2 {
-      margin-top: 60px;
-      color: #9db4ff;
-    }
+    .lang { margin-top: 10px; font-size: 14px; }
+    .lang a { color: #7aa2ff; text-decoration: none; margin: 0 6px; cursor: pointer; }
 
-    p, li {
-      color: #cfcfcf;
-      font-size: 17px;
-    }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 40px; }
+    .card { background: #151821; border-radius: 14px; padding: 24px; border: 1px solid #1f2433; transition: transform 0.2s ease, border 0.2s ease; }
+    .card:hover { transform: translateY(-4px); border-color: #7aa2ff; }
+    .card h3 { margin-top: 0; color: #ffffff; }
 
-    ul, ol {
-      margin-left: 20px;
-    }
+    .cta { margin-top: 60px; padding: 40px; text-align: center; background: linear-gradient(135deg, #1f2b6d, #151821); border-radius: 16px; }
+    .cta h2 { margin-top: 0; color: #ffffff; }
+    .cta a { display: inline-block; margin-top: 20px; padding: 14px 28px; background: #7aa2ff; color: #0f1115; text-decoration: none; border-radius: 10px; font-weight: 600; }
 
-    .lang {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .lang a {
-      color: #7aa2ff;
-      text-decoration: none;
-      margin: 0 6px;
-    }
-
-    .hero {
-      text-align: center;
-      padding-top: 40px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 20px auto;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: #151821;
-      border-radius: 14px;
-      padding: 24px;
-      border: 1px solid #1f2433;
-      transition: transform 0.2s ease, border 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #7aa2ff;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #ffffff;
-    }
-
-    .cta {
-      margin-top: 60px;
-      padding: 40px;
-      text-align: center;
-      background: linear-gradient(135deg, #1f2b6d, #151821);
-      border-radius: 16px;
-    }
-
-    .cta h2 {
-      margin-top: 0;
-      color: #ffffff;
-    }
-
-    .cta a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #7aa2ff;
-      color: #0f1115;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-    }
-
-    footer {
-      font-size: 14px;
-      color: #888;
-    }
+    footer { font-size: 14px; color: #888; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Solarion</h1>
-  <p>AI-Powered Digital Studio for content, automation and growth</p>
+  <h1 data-key="header_h1">Solarion</h1>
+  <p data-key="header_p">AI-студия для контента, автоматизации и роста</p>
   <div class="lang">
-    <a href="#">EN</a> | <a href="#">RU</a>
+    <a onclick="setLang('en')">EN</a> | <a onclick="setLang('ru')">RU</a>
   </div>
 </header>
 
 <section class="hero">
-  <h1>AI-студия для роста бизнеса</h1>
-
-  <p>
-    Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы
-    и экономят время владельцам бизнеса.
-  </p>
-
-  <p>
-    No hype. No chaos. <br>
-    Only systems that actually work.
-  </p>
+  <h1 data-key="hero_h1">AI-студия для роста бизнеса</h1>
+  <p data-key="hero_p1">Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы и экономят время владельцам бизнеса.</p>
+  <p data-key="hero_p2">Без лишних инструментов. Без хайпа. Только то, что реально работает.</p>
 </section>
 
 <section>
-  <h2>Что мы делаем</h2>
-
-  <p>
-    Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг
-    и автоматизацию в одну понятную систему, которая работает на результат.
-  </p>
+  <h2 data-key="what_h2">Что мы делаем</h2>
+  <p data-key="what_p">Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг и автоматизацию в одну понятную систему.</p>
 
   <div class="features">
     <div class="card">
-      <h3>AI Content</h3>
-      <p>Тексты, сценарии и офферы, заточенные под цели бизнеса.</p>
+      <h3 data-key="f1_h3">AI Контент</h3>
+      <p data-key="f1_p">Тексты, сценарии и офферы, заточенные под цели бизнеса.</p>
     </div>
-
     <div class="card">
-      <h3>AI Marketing</h3>
-      <p>Позиционирование, реклама и аналитика с фокусом на лиды.</p>
+      <h3 data-key="f2_h3">AI Маркетинг</h3>
+      <p data-key="f2_p">Позиционирование, реклама и аналитика с фокусом на лиды.</p>
     </div>
-
     <div class="card">
-      <h3>AI Automation</h3>
-      <p>Автоматизация заявок, коммуникаций и внутренних процессов.</p>
+      <h3 data-key="f3_h3">AI Автоматизация</h3>
+      <p data-key="f3_p">Автоматизация заявок, коммуникаций и внутренних процессов.</p>
     </div>
   </div>
 
-  <h2>Как мы работаем</h2>
+  <h2 data-key="work_h2">Как мы работаем</h2>
   <ol>
-    <li>Анализируем бизнес и цели</li>
-    <li>Проектируем AI-систему</li>
-    <li>Внедряем и настраиваем</li>
-    <li>Оптимизируем по данным</li>
+    <li data-key="w1">Анализируем бизнес и цели</li>
+    <li data-key="w2">Проектируем AI-систему</li>
+    <li data-key="w3">Внедряем и настраиваем</li>
+    <li data-key="w4">Оптимизируем по данным</li>
   </ol>
 
-  <p>
-    <strong>
-      Мы не продаём инструменты.<br>
-      Мы строим AI-системы под ваш бизнес.
-    </strong>
-  </p>
-
   <div class="cta">
-    <h2>С чего начать</h2>
-    <p>
-      AI Strategy & Setup — безопасный вход в AI без лишних рисков.
-    </p>
-    <a href="#">Start with strategy</a>
+    <h2 data-key="cta_h2">С чего начать</h2>
+    <p data-key="cta_p">AI Strategy & Setup — безопасный вход в AI без лишних рисков.</p>
+    <a data-key="cta_btn" href="#">Начать стратегию</a>
   </div>
 </section>
 
 <footer>
-  © Solarion Media. All rights reserved.
+  <span data-key="footer">© Solarion Media. Все права защищены.</span>
 </footer>
+
+<script>
+const texts = {
+  en: {
+    header_h1: "Solarion",
+    header_p: "AI studio for content, automation and growth",
+    hero_h1: "AI Studio for Business Growth",
+    hero_p1: "We create AI systems that bring clients, automate processes and save owners time.",
+    hero_p2: "No hype. No chaos. Only systems that actually work.",
+    what_h2: "What we do",
+    what_p: "Solarion is a universal AI studio. We combine content, marketing, and automation into one clear system.",
+    f1_h3: "AI Content",
+    f1_p: "Texts, scripts, and offers tailored to business goals.",
+    f2_h3: "AI Marketing",
+    f2_p: "Positioning, ads, and analytics focused on real leads.",
+    f3_h3: "AI Automation",
+    f3_p: "Automation of leads, communications, and internal processes.",
+    work_h2: "How we work",
+    w1: "We analyze business and goals",
+    w2: "We design AI systems",
+    w3: "We implement and configure",
+    w4: "We optimize based on data",
+    cta_h2: "Where to start",
+    cta_p: "AI Strategy & Setup — safe and quick entry into AI without unnecessary risks.",
+    cta_btn: "Start strategy",
+    footer: "© Solarion Media. All rights reserved."
+  },
+  ru: {
+    header_h1: "Solarion",
+    header_p: "AI-студия для контента, автоматизации и роста",
+    hero_h1: "AI-студия для роста бизнеса",
+    hero_p1: "Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы и экономят время владельцам бизнеса.",
+    hero_p2: "Без лишних инструментов. Без хайпа. Только то, что реально работает.",
+    what_h2: "Что мы делаем",
+    what_p: "Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг и автоматизацию в одну понятную систему.",
+    f1_h3: "AI Контент",
+    f1_p: "Тексты, сценарии и офферы, заточенные под цели бизнеса.",
+    f2_h3: "AI Маркетинг",
+    f2_p: "Позиционирование, реклама и аналитика с фокусом на лиды.",
+    f3_h3: "AI Автоматизация",
+    f3_p: "Автоматизация заявок, коммуникаций и внутренних процессов.",
+    work_h2: "Как мы работаем",
+    w1: "Анализируем бизнес и цели",
+    w2: "Проектируем AI-систему",
+    w3: "Внедряем и настраиваем",
+    w4: "Оптимизируем по данным",
+    cta_h2: "С чего начать",
+    cta_p: "AI Strategy & Setup — безопасный вход в AI без лишних рисков.",
+    cta_btn: "Начать стратегию",
+    footer: "© Solarion Media. Все права защищены."
+  }
+};
+
+function setLang(lang){
+  for(const key in texts[lang]){
+    const el = document.querySelector(`[data-key=${key}]`);
+    if(el) el.innerText = texts[lang][key];
+  }
+}
+</script>
 
 </body>
 </html>
