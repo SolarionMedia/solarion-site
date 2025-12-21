@@ -8,9 +8,7 @@
   <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- GOOGLE ANALYTICS
-       ⚠️ ОБЯЗАТЕЛЬНО ЗАМЕНИ G-XXXXXXXXXX
-       ИНАЧЕ АНАЛИТИКА НЕ РАБОТАЕТ -->
+  <!-- GOOGLE ANALYTICS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-517112874"></script>
   <script>
     if (typeof window !== "undefined") {
@@ -30,154 +28,104 @@
       --glow: rgba(114,144,255,.25);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
 
     body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top, #1b1b2f, var(--bg));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--text);
+      min-height:100vh;
+      background:radial-gradient(circle at top, #1b1b2f, var(--bg));
+      display:flex; justify-content:center; align-items:center; color:var(--text);
     }
 
     .card {
-      background: var(--card);
-      padding: 34px;
-      border-radius: 22px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,.04),
-        0 30px 60px rgba(0,0,0,.6),
-        0 0 40px var(--glow);
-      animation: fade 0.6s ease;
+      background:var(--card);
+      padding:34px;
+      border-radius:22px;
+      width:100%;
+      max-width:420px;
+      box-shadow:0 0 0 1px rgba(255,255,255,.04),0 30px 60px rgba(0,0,0,.6),0 0 40px var(--glow);
+      animation:fade 0.6s ease;
     }
 
     @keyframes fade {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {opacity:0; transform:translateY(24px);}
+      to {opacity:1; transform:translateY(0);}
     }
 
-    h1 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 6px;
-    }
+    h1 { text-align:center; font-size:28px; margin-bottom:6px; }
+    p { text-align:center; color:var(--muted); margin-bottom:24px; font-size:15px; }
 
-    p {
-      text-align: center;
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-size: 15px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
+    .buttons { display:flex; flex-direction:column; gap:14px; }
     .btn {
-      padding: 15px;
-      border-radius: 15px;
-      text-align: center;
-      font-weight: 600;
-      color: #fff;
-      text-decoration: none;
-      transition: .25s;
-      box-shadow: 0 6px 18px rgba(0,0,0,.35);
+      padding:15px;
+      border-radius:15px;
+      text-align:center;
+      font-weight:600;
+      color:#fff;
+      text-decoration:none;
+      transition:.25s;
+      box-shadow:0 6px 18px rgba(0,0,0,.35);
     }
+    .btn:hover { transform:scale(1.07); filter:brightness(1.15); }
+    .btn:active { transform:scale(.96); opacity:.85; }
 
-    .btn:hover {
-      transform: scale(1.07);
-      filter: brightness(1.15);
-    }
+    .telegram { background:linear-gradient(135deg,#229ED9,#1b7db3); }
+    .whatsapp { background:linear-gradient(135deg,#25D366,#1ea855); }
+    .viber { background:linear-gradient(135deg,#7360F2,#5a46d6); }
+    .email { background:linear-gradient(135deg,#555,#333); }
 
-    .btn:active {
-      transform: scale(.96);
-      opacity: .85;
-    }
-
-    .telegram { background: linear-gradient(135deg,#229ED9,#1b7db3); }
-    .whatsapp { background: linear-gradient(135deg,#25D366,#1ea855); }
-    .viber { background: linear-gradient(135deg,#7360F2,#5a46d6); }
-    .email { background: linear-gradient(135deg,#555,#333); }
-
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 22px;
-    }
+    footer { text-align:center; font-size:13px; color:var(--muted); margin-top:22px; }
 
     /* POPUP */
     .popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.6);
+      display:none;
+      justify-content:center;
+      align-items:center;
     }
-
-    .popup.active { display: flex; }
-
+    .popup.active { display:flex; }
     .popup-content {
-      background: var(--card);
-      padding: 28px;
-      border-radius: 18px;
-      width: 90%;
-      max-width: 360px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.6);
+      background:var(--card);
+      padding:28px;
+      border-radius:18px;
+      width:90%;
+      max-width:360px;
+      box-shadow:0 20px 50px rgba(0,0,0,.6);
     }
-
     .popup-content input,
     .popup-content textarea {
-      width: 100%;
-      margin-bottom: 12px;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      outline: none;
+      width:100%;
+      margin-bottom:12px;
+      padding:12px;
+      border-radius:10px;
+      border:none;
+      outline:none;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- BIO / LINK-IN-BIO -->
   <div class="card">
     <h1>Solarion.Media</h1>
     <p>Связь • Сотрудничество • Партнёрство</p>
 
     <div class="buttons">
-      <!-- TELEGRAM USERNAME (СТАБИЛЬНО) -->
       <a class="btn telegram" href="https://t.me/solarion" target="_blank">Telegram</a>
-
       <a class="btn whatsapp" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
       <a class="btn viber" href="viber://chat?number=375296909200">Viber</a>
-
-      <!-- POPUP TRIGGER -->
-      <a class="btn email" href="#" onclick="openPopup()">Оставить заявку</a>
+      <a class="btn email" href="#" id="popupBtn">Оставить заявку</a>
     </div>
 
     <footer>© 2025 Solarion.Media</footer>
   </div>
 
-  <!-- POPUP FORM (БЕЗ СЕРВЕРА) -->
+  <!-- POPUP FORM -->
   <div class="popup" id="popup">
     <div class="popup-content">
       <h3 style="margin-bottom:10px;">Заявка</h3>
-
-      <!-- FORM — работает через Formspree -->
       <form action="https://formspree.io/f/dc3459c3c7d84a90a5b95ca13dda63fe" method="POST">
-        <!-- ⚠️ ЗАМЕНИ XXXXXXX на свой ID Formspree -->
         <input type="email" name="email" placeholder="Ваш email" required />
         <textarea name="message" placeholder="Сообщение" required></textarea>
         <button class="btn email" type="submit">Отправить</button>
@@ -186,15 +134,21 @@
   </div>
 
   <script>
-    function openPopup() {
-      document.getElementById('popup').classList.add('active');
-    }
-    document.getElementById('popup').onclick = e => {
-      if (e.target.id === 'popup') e.target.classList.remove('active');
-    };
+    document.addEventListener("DOMContentLoaded", () => {
+      const popup = document.getElementById('popup');
+      const btn = document.getElementById('popupBtn');
+
+      btn.addEventListener('click', e => {
+        e.preventDefault(); // отменяем переход по #
+        popup.classList.add('active');
+      });
+
+      popup.addEventListener('click', e => {
+        if(e.target === popup) popup.classList.remove('active');
+      });
+    });
   </script>
 
 </body>
 </html>
-
 
