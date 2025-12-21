@@ -25,7 +25,7 @@
       --card: #16161d;
       --text: #ffffff;
       --muted: #9a9aab;
-      --glow: rgba(114,144,255,.25);
+      --glow: rgba(114,144,255,.35);
     }
 
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
@@ -34,74 +34,122 @@
       min-height:100vh;
       background:radial-gradient(circle at top, #1b1b2f, var(--bg));
       display:flex; justify-content:center; align-items:center; color:var(--text);
+      overflow-x:hidden;
     }
 
     .card {
       background:var(--card);
-      padding:34px;
-      border-radius:22px;
+      padding:36px;
+      border-radius:24px;
       width:100%;
-      max-width:420px;
-      box-shadow:0 0 0 1px rgba(255,255,255,.04),0 30px 60px rgba(0,0,0,.6),0 0 40px var(--glow);
-      animation:fade 0.6s ease;
+      max-width:440px;
+      box-shadow:0 0 0 1px rgba(255,255,255,.05),0 30px 60px rgba(0,0,0,.6),0 0 50px var(--glow);
+      animation:fadeUp 0.6s ease;
     }
 
-    @keyframes fade {
-      from {opacity:0; transform:translateY(24px);}
-      to {opacity:1; transform:translateY(0);}
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
     }
 
-    h1 { text-align:center; font-size:28px; margin-bottom:6px; }
-    p { text-align:center; color:var(--muted); margin-bottom:24px; font-size:15px; }
+    h1 { text-align:center; font-size:30px; margin-bottom:8px; }
+    p { text-align:center; color:var(--muted); margin-bottom:28px; font-size:16px; }
 
-    .buttons { display:flex; flex-direction:column; gap:14px; }
+    .buttons { display:flex; flex-direction:column; gap:16px; }
     .btn {
-      padding:15px;
-      border-radius:15px;
+      padding:16px;
+      border-radius:18px;
       text-align:center;
       font-weight:600;
       color:#fff;
       text-decoration:none;
-      transition:.25s;
-      box-shadow:0 6px 18px rgba(0,0,0,.35);
+      transition:.3s;
+      box-shadow:0 6px 20px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
     }
-    .btn:hover { transform:scale(1.07); filter:brightness(1.15); }
-    .btn:active { transform:scale(.96); opacity:.85; }
+
+    /* glow и подпрыгивание */
+    @keyframes jumpGlow {
+      0% { transform: translateY(0); box-shadow:0 6px 20px rgba(0,0,0,.35); }
+      50% { transform: translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,.5); }
+      100% { transform: translateY(0); box-shadow:0 6px 20px rgba(0,0,0,.35); }
+    }
+
+    .btn::after {
+      content:"";
+      position:absolute;
+      top:0; left:0; width:100%; height:100%;
+      background:var(--glow);
+      opacity:0;
+      transition:.4s;
+      border-radius:inherit;
+      pointer-events:none;
+    }
+
+    .btn:hover::after { opacity:0.25; }
+    .btn:hover { animation: jumpGlow 0.4s ease forwards; filter: brightness(1.2); }
+    .btn:active { transform:scale(.95); opacity:.85; }
 
     .telegram { background:linear-gradient(135deg,#229ED9,#1b7db3); }
     .whatsapp { background:linear-gradient(135deg,#25D366,#1ea855); }
     .viber { background:linear-gradient(135deg,#7360F2,#5a46d6); }
     .email { background:linear-gradient(135deg,#555,#333); }
 
-    footer { text-align:center; font-size:13px; color:var(--muted); margin-top:22px; }
+    footer { text-align:center; font-size:13px; color:var(--muted); margin-top:24px; }
 
     /* POPUP */
     .popup {
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,.6);
-      display:none;
+      background:rgba(0,0,0,0.7);
+      display:flex;
       justify-content:center;
       align-items:center;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .4s;
     }
-    .popup.active { display:flex; }
+    .popup.active { opacity:1; pointer-events:auto; }
+
     .popup-content {
       background:var(--card);
-      padding:28px;
-      border-radius:18px;
+      padding:32px;
+      border-radius:20px;
       width:90%;
-      max-width:360px;
-      box-shadow:0 20px 50px rgba(0,0,0,.6);
+      max-width:380px;
+      box-shadow:0 20px 60px rgba(0,0,0,.6);
+      transform:scale(0.8);
+      transition:transform .4s;
     }
+    .popup.active .popup-content { transform:scale(1); }
+
     .popup-content input,
     .popup-content textarea {
       width:100%;
-      margin-bottom:12px;
-      padding:12px;
-      border-radius:10px;
+      margin-bottom:14px;
+      padding:14px;
+      border-radius:12px;
       border:none;
       outline:none;
+      background:#1e1e2b;
+      color:#fff;
+      font-size:15px;
     }
+
+    .popup-content button {
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:none;
+      font-weight:600;
+      background:linear-gradient(135deg,#555,#333);
+      color:#fff;
+      cursor:pointer;
+      transition:.3s;
+    }
+    .popup-content button:hover { transform:scale(1.05); filter:brightness(1.15); }
+    .popup-content button:active { transform:scale(.95); }
   </style>
 </head>
 
@@ -121,14 +169,13 @@
     <footer>© 2025 Solarion.Media</footer>
   </div>
 
-  <!-- POPUP FORM -->
   <div class="popup" id="popup">
     <div class="popup-content">
-      <h3 style="margin-bottom:10px;">Заявка</h3>
+      <h3 style="margin-bottom:12px; text-align:center;">Заявка</h3>
       <form action="https://formspree.io/f/dc3459c3c7d84a90a5b95ca13dda63fe" method="POST">
         <input type="email" name="email" placeholder="Ваш email" required />
         <textarea name="message" placeholder="Сообщение" required></textarea>
-        <button class="btn email" type="submit">Отправить</button>
+        <button type="submit">Отправить</button>
       </form>
     </div>
   </div>
@@ -139,16 +186,15 @@
       const btn = document.getElementById('popupBtn');
 
       btn.addEventListener('click', e => {
-        e.preventDefault(); // отменяем переход по #
+        e.preventDefault();
         popup.classList.add('active');
       });
 
       popup.addEventListener('click', e => {
-        if(e.target === popup) popup.classList.remove('active');
+        if (e.target === popup) popup.classList.remove('active');
       });
     });
   </script>
 
 </body>
 </html>
-
