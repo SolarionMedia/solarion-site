@@ -2,23 +2,15 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-
-  <!-- =========================================
-       НАЗВАНИЕ СТРАНИЦЫ (можешь менять)
-       ========================================= -->
   <title>Solarion.Media — Контакты</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- =========================================
-       GOOGLE FONT (один, лёгкий, стабильный)
-       ========================================= -->
+  <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- =========================================
-       GOOGLE ANALYTICS (АНАЛИТИКА)
-       ⚠️ ЗАМЕНИ G-XXXXXXXXXX на свой ID
-       ========================================= -->
+  <!-- GOOGLE ANALYTICS
+       ⚠️ ЗАМЕНИ G-XXXXXXXXXX, ИНАЧЕ НЕ СЧИТАЕТ -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -27,16 +19,13 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- =========================================
-       ВСЕ СТИЛИ В ОДНОМ МЕСТЕ
-       НИЧЕГО ВНЕ ЭТОГО ФАЙЛА НЕ НУЖНО
-       ========================================= -->
   <style>
     :root {
-      --bg: #0e0e11;
+      --bg: #0b0b0f;
       --card: #16161d;
       --text: #ffffff;
       --muted: #9a9aab;
+      --glow: rgba(114, 144, 255, 0.25);
     }
 
     * {
@@ -47,45 +36,48 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #1b1b27, var(--bg));
-      color: var(--text);
+      background:
+        radial-gradient(circle at top, #1b1b2f, var(--bg));
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: var(--text);
     }
 
-    /* ===== КАРТОЧКА ===== */
     .card {
       background: var(--card);
-      border-radius: 20px;
-      padding: 32px;
+      border-radius: 22px;
+      padding: 34px;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      animation: fadeIn 0.6s ease;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04),
+        0 30px 60px rgba(0,0,0,0.6),
+        0 0 40px var(--glow);
+      animation: appear 0.6s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
+      text-align: center;
       font-size: 28px;
       font-weight: 700;
       margin-bottom: 6px;
-      text-align: center;
+      letter-spacing: 0.3px;
     }
 
     p {
       text-align: center;
+      font-size: 15px;
       color: var(--muted);
       margin-bottom: 26px;
-      font-size: 15px;
     }
 
-    /* ===== КНОПКИ ===== */
     .buttons {
       display: flex;
       flex-direction: column;
@@ -96,33 +88,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 14px;
-      border-radius: 14px;
-      font-weight: 600;
+      padding: 15px;
+      border-radius: 15px;
       font-size: 16px;
+      font-weight: 600;
       color: #fff;
       text-decoration: none;
       transition: all 0.25s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
 
-    /* hover — подсветка */
     .btn:hover {
       transform: scale(1.07);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
       filter: brightness(1.15);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.45);
     }
 
-    /* click — микро-анимация */
     .btn:active {
       transform: scale(0.96);
       opacity: 0.85;
     }
 
-    /* ===== ФИРМЕННЫЕ ЦВЕТА СОЦСЕТЕЙ ===== */
-    .telegram { background: #229ED9; }
-    .whatsapp { background: #25D366; }
-    .viber    { background: #7360F2; }
-    .email    { background: #444; }
+    /* SOCIAL COLORS */
+    .telegram { background: linear-gradient(135deg, #229ED9, #1b7db3); }
+    .whatsapp { background: linear-gradient(135deg, #25D366, #1ea855); }
+    .viber    { background: linear-gradient(135deg, #7360F2, #5a46d6); }
+    .email    { background: linear-gradient(135deg, #555, #333); }
 
     footer {
       margin-top: 22px;
@@ -135,35 +126,29 @@
 
 <body>
 
-  <!-- =========================================
-       ОСНОВНОЙ БЛОК
-       ========================================= -->
   <div class="card">
     <h1>Solarion.Media</h1>
-    <p>Связь, сотрудничество, партнёрство</p>
+    <p>Связь • Сотрудничество • Партнёрство</p>
 
-    <!-- =========================================
-         КНОПКИ — МЕНЯЕШЬ ТОЛЬКО ССЫЛКИ
-         ========================================= -->
     <div class="buttons">
 
       <!-- TELEGRAM -->
       <a class="btn telegram"
-         href="https://t.me/solarion"
+         href="https://t.me/+375296909200"
          target="_blank">
         Telegram
       </a>
 
-      <!-- WHATSAPP (замени номер) -->
+      <!-- WHATSAPP -->
       <a class="btn whatsapp"
-         href="https://wa.me/375000000000"
+         href="https://wa.me/375296909200"
          target="_blank">
         WhatsApp
       </a>
 
-      <!-- VIBER (замени номер) -->
+      <!-- VIBER -->
       <a class="btn viber"
-         href="viber://chat?number=375000000000">
+         href="viber://chat?number=375296909200">
         Viber
       </a>
 
