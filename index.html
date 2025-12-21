@@ -2,99 +2,80 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Solarion — AI Digital Studio</title>
+  <title>Solarion — AI-студия для роста бизнеса</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --bg:#0f1115;
-      --card:#151821;
-      --accent:#7aa2ff;
-      --text:#ffffff;
-      --muted:#cfcfcf;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #1b1f3b, #0f1115);
+      color: #ffffff;
+      line-height: 1.6;
     }
-    body{
-      margin:0;
-      font-family:Inter,Arial,sans-serif;
-      background:radial-gradient(1200px at 15% 10%,#1a1f3c,transparent),var(--bg);
-      color:var(--text);
-      line-height:1.7;
+
+    header, footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
     }
-    header{
-      position:sticky;top:0;
-      background:rgba(15,17,21,.8);
-      backdrop-filter:blur(10px);
-      padding:28px 20px;
-      text-align:center;
-      border-bottom:1px solid #1f2433;
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
-    header h1{margin:0;font-size:42px;}
-    header p{color:#aaa;margin-top:6px;font-size:15px;}
-    .lang a{color:var(--accent);margin:0 8px;cursor:pointer;font-weight:600}
-    section{max-width:1100px;margin:0 auto;padding:80px 20px;}
-    .hero h1{
-      font-size:52px;
-      background:linear-gradient(135deg,#fff,var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
-    h2{color:var(--accent);margin-top:80px;font-size:34px}
-    p{color:var(--muted);max-width:760px}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:28px;margin-top:40px
+
+    h2 {
+      margin-top: 60px;
+      font-size: 28px;
     }
-    .card{
-      background:linear-gradient(180deg,#171b27,#121521);
-      border:1px solid #1f2433;
-      border-radius:18px;
-      padding:32px;
-      transition:.3s;
+
+    p {
+      color: #d0d0d0;
+      font-size: 18px;
     }
-    .card:hover{
-      border-color:var(--accent);
-      box-shadow:0 15px 40px rgba(122,162,255,.25)
+
+    ul, ol {
+      margin-left: 20px;
+      color: #cfcfcf;
     }
-    .price{font-size:28px;color:#fff;margin:16px 0}
-    .cta{
-      margin-top:100px;
-      padding:60px 30px;
-      text-align:center;
-      border-radius:22px;
-      background:linear-gradient(135deg,#1f2b6d,#141826);
-      border:1px solid #2a3560;
+
+    .lang a {
+      color: #7aa2ff;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
     }
-    .btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:16px 34px;
-      background:linear-gradient(135deg,var(--accent),#5f8ee0);
-      color:#0f1115;
-      border-radius:14px;
-      font-weight:700;
-      text-decoration:none;
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 30px;
+      margin-top: 30px;
     }
-    form{
-      max-width:520px;
-      margin:40px auto 0;
-      display:grid;
-      gap:14px;
+
+    .cta {
+      margin-top: 40px;
+      padding: 18px 32px;
+      background: linear-gradient(135deg, #6f7cff, #9b6dff);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
     }
-    input,textarea{
-      padding:14px;
-      border-radius:10px;
-      border:1px solid #1f2433;
-      background:#0f1115;
-      color:#fff;
-    }
-    footer{
-      padding:40px 20px;
-      text-align:center;
-      color:#888;
-      border-top:1px solid #1f2433;
+
+    footer {
+      font-size: 14px;
+      color: #999;
     }
   </style>
 </head>
@@ -103,69 +84,69 @@
 
 <header>
   <h1>Solarion</h1>
-  <p>AI-студия для контента, автоматизации и роста</p>
+  <p>AI-студия контента, автоматизации и роста</p>
   <div class="lang">
-    <a href="#">RU</a> | <a href="#">EN</a>
+    <a href="en.html">EN</a>
   </div>
 </header>
 
-<section class="hero">
-  <h1>AI-студия для роста бизнеса</h1>
-  <p>Мы строим AI-системы, которые приводят клиентов, автоматизируют процессы и масштабируют бизнес.</p>
-</section>
-
 <section>
-  <h2>Пакеты услуг</h2>
+  <h1>AI-системы для бизнеса, а не игрушки</h1>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Start</h3>
-      <div class="price">$300–500</div>
-      <p>AI-контент, базовая автоматизация, стратегия запуска.</p>
-    </div>
-
-    <div class="card">
-      <h3>Growth</h3>
-      <div class="price">$800–1500</div>
-      <p>Контент + маркетинг + автоворонка заявок.</p>
-    </div>
-
-    <div class="card">
-      <h3>Scale</h3>
-      <div class="price">$2500+</div>
-      <p>Полная AI-система под бизнес, аналитику и рост.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Для агентств и фаундеров</h2>
   <p>
-    Мы работаем как AI-партнёр: закрываем контент, автоматизацию и процессы,
-    чтобы вы масштабировались без увеличения команды.
+    Мы создаём AI-решения, которые реально приводят клиентов,
+    автоматизируют процессы и экономят деньги владельцам бизнеса.
   </p>
-</section>
 
-<section class="cta">
-  <h2>Оставить заявку</h2>
-  <p>Свяжемся с вами в течение 24 часов.</p>
+  <div class="card">
+    <p>
+      ❌ Без хайпа<br>
+      ❌ Без зоопарка сервисов<br>
+      ✅ Только системы, которые работают
+    </p>
+  </div>
 
-  <form action="mailto:solarionmedia@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Ваше имя" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" rows="4" placeholder="Коротко о задаче"></textarea>
-    <button class="btn" type="submit">Отправить</button>
-  </form>
-
-  <p style="margin-top:20px">
-    Telegram / A1: <strong>+375-29-690-92-00</strong>
+  <h2>Что такое Solarion</h2>
+  <p>
+    Solarion — универсальная AI-студия.
+    Мы объединяем стратегию, контент, маркетинг и автоматизацию
+    в одну понятную бизнес-систему.
   </p>
+
+  <h2>Направления</h2>
+  <ul>
+    <li><strong>AI-контент</strong> — тексты, сценарии, офферы</li>
+    <li><strong>AI-маркетинг</strong> — упаковка, воронки, аналитика</li>
+    <li><strong>AI-автоматизация</strong> — заявки, CRM, коммуникации</li>
+  </ul>
+
+  <h2>Как мы работаем</h2>
+  <ol>
+    <li>Анализ бизнеса и целей</li>
+    <li>Проектирование AI-архитектуры</li>
+    <li>Внедрение и настройка</li>
+    <li>Оптимизация по данным</li>
+  </ol>
+
+  <div class="card">
+    <p><strong>
+      Мы не продаём инструменты.<br>
+      Мы строим AI-системы под бизнес.
+    </strong></p>
+  </div>
+
+  <h2>С чего начать</h2>
+  <p>
+    AI-стратегия и внедрение — безопасный вход в AI
+    без лишних рисков и экспериментов.
+  </p>
+
+  <a class="cta" href="clients.html">Стать клиентом</a>
 </section>
 
 <footer>
-  © Solarion Media. All rights reserved.
+  © Solarion Media
 </footer>
 
 </body>
 </html>
-
