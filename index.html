@@ -2,151 +2,273 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Solarion — AI-студия для роста бизнеса</title>
+  <title>Solarion - AI-Powered Digital Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <style>
+    /* Основные стили */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #1b1f3b, #0f1115);
+      padding: 0;
+      font-family: "Arial", sans-serif;
+      background: #0f1115;
       color: #ffffff;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header, footer {
       text-align: center;
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(6px);
+      padding: 30px 20px;
+      background: #151821;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #7aa2ff;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #cfcfcf;
     }
 
     section {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    h1, h2 {
+      color: #ffffff;
+      margin-bottom: 20px;
     }
 
-    h2 {
-      margin-top: 60px;
-      font-size: 28px;
-    }
-
-    p {
-      color: #d0d0d0;
-      font-size: 18px;
+    p, li {
+      color: #cfcfcf;
+      margin-bottom: 15px;
     }
 
     ul, ol {
       margin-left: 20px;
-      color: #cfcfcf;
+    }
+
+    .lang {
+      margin-top: 10px;
+      font-size: 14px;
     }
 
     .lang a {
       color: #7aa2ff;
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 5px;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .lang a:hover {
+      color: #ff9f7f;
+    }
+
+    /* Карточки услуг / кейсов */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+      justify-content: center;
     }
 
     .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 30px;
-      margin-top: 30px;
+      background: linear-gradient(145deg, #1b1e26, #0f1115);
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .cta {
-      margin-top: 40px;
-      padding: 18px 32px;
-      background: linear-gradient(135deg, #6f7cff, #9b6dff);
-      color: white;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    }
+
+    .card h3 {
+      color: #7aa2ff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cfcfcf;
+    }
+
+    /* Кнопки контактов */
+    .contact-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .contact-btn {
+      padding: 12px 22px;
+      border-radius: 8px;
       text-decoration: none;
-      border-radius: 30px;
       font-weight: bold;
-      display: inline-block;
+      transition: 0.3s;
+      color: #fff;
     }
 
-    footer {
-      font-size: 14px;
-      color: #999;
+    .email { background: #7aa2ff; }
+    .telegram { background: #2CA5E0; }
+    .viber { background: #7360F2; }
+    .whatsapp { background: #25D366; }
+
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.85;
+    }
+
+    /* Анимация появления при скролле */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .card-container { flex-direction: column; align-items: center; }
+      header h1 { font-size: 2em; }
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>Solarion</h1>
-  <p>AI-студия контента, автоматизации и роста</p>
+  <p>AI-студия для контента, маркетинга и автоматизации</p>
   <div class="lang">
-    <a href="en.html">EN</a>
+    <a href="#ru" onclick="switchLang('ru')">RU</a> | 
+    <a href="#en" onclick="switchLang('en')">EN</a>
   </div>
 </header>
 
-<section>
-  <h1>AI-системы для бизнеса, а не игрушки</h1>
+<section id="ru" class="fade-in">
+  <h1>Solarion — AI-студия для роста бизнеса</h1>
 
   <p>
-    Мы создаём AI-решения, которые реально приводят клиентов,
-    автоматизируют процессы и экономят деньги владельцам бизнеса.
+    Мы создаём AI-системы, которые приводят клиентов, автоматизируют процессы
+    и экономят время владельцам бизнеса.
   </p>
 
-  <div class="card">
-    <p>
-      ❌ Без хайпа<br>
-      ❌ Без зоопарка сервисов<br>
-      ✅ Только системы, которые работают
-    </p>
+  <p>
+    Без лишних инструментов.<br>
+    Без хайпа.<br>
+    Только то, что реально работает.
+  </p>
+
+  <h2>Что мы делаем</h2>
+  <p>
+    Solarion — универсальная AI-студия. Мы объединяем контент, маркетинг
+    и автоматизацию в одну понятную систему.
+  </p>
+
+  <h2>Наши направления</h2>
+  <div class="card-container">
+    <div class="card"><h3>AI-контент</h3><p>Тексты, сценарии, офферы</p></div>
+    <div class="card"><h3>AI-маркетинг</h3><p>Упаковка, реклама, аналитика</p></div>
+    <div class="card"><h3>AI-автоматизация</h3><p>Заявки, коммуникации, процессы</p></div>
   </div>
-
-  <h2>Что такое Solarion</h2>
-  <p>
-    Solarion — универсальная AI-студия.
-    Мы объединяем стратегию, контент, маркетинг и автоматизацию
-    в одну понятную бизнес-систему.
-  </p>
-
-  <h2>Направления</h2>
-  <ul>
-    <li><strong>AI-контент</strong> — тексты, сценарии, офферы</li>
-    <li><strong>AI-маркетинг</strong> — упаковка, воронки, аналитика</li>
-    <li><strong>AI-автоматизация</strong> — заявки, CRM, коммуникации</li>
-  </ul>
 
   <h2>Как мы работаем</h2>
   <ol>
-    <li>Анализ бизнеса и целей</li>
-    <li>Проектирование AI-архитектуры</li>
-    <li>Внедрение и настройка</li>
-    <li>Оптимизация по данным</li>
+    <li>Анализируем бизнес</li>
+    <li>Проектируем AI-систему</li>
+    <li>Внедряем и настраиваем</li>
+    <li>Улучшаем по данным</li>
   </ol>
 
-  <div class="card">
-    <p><strong>
-      Мы не продаём инструменты.<br>
-      Мы строим AI-системы под бизнес.
-    </strong></p>
+  <div class="contact-btns">
+    <a class="contact-btn email" href="mailto:solarionmedia@gmail.com">Email</a>
+    <a class="contact-btn telegram" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
+    <a class="contact-btn viber" href="viber://chat?number=%2B375296909200">Viber</a>
+    <a class="contact-btn whatsapp" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
   </div>
+</section>
 
-  <h2>С чего начать</h2>
+<section id="en" class="fade-in" style="display:none">
+  <h1>Solarion — AI Studio for Business Growth</h1>
+
   <p>
-    AI-стратегия и внедрение — безопасный вход в AI
-    без лишних рисков и экспериментов.
+    We create AI systems that bring clients, automate processes,
+    and save business owners time.
   </p>
 
-  <a class="cta" href="clients.html">Стать клиентом</a>
+  <p>
+    No unnecessary tools.<br>
+    Only systems that actually work.
+  </p>
+
+  <h2>What we do</h2>
+  <p>
+    Solarion is a universal AI studio. We combine content, marketing,
+    and automation into one clear system.
+  </p>
+
+  <h2>Our services</h2>
+  <div class="card-container">
+    <div class="card"><h3>AI Content</h3><p>Texts, scripts, offers</p></div>
+    <div class="card"><h3>AI Marketing</h3><p>Packaging, advertising, analytics</p></div>
+    <div class="card"><h3>AI Automation</h3><p>Leads, communication, processes</p></div>
+  </div>
+
+  <h2>How we work</h2>
+  <ol>
+    <li>Analyze business</li>
+    <li>Design AI system</li>
+    <li>Implement and configure</li>
+    <li>Improve with data</li>
+  </ol>
+
+  <div class="contact-btns">
+    <a class="contact-btn email" href="mailto:solarionmedia@gmail.com">Email</a>
+    <a class="contact-btn telegram" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
+    <a class="contact-btn viber" href="viber://chat?number=%2B375296909200">Viber</a>
+    <a class="contact-btn whatsapp" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
+  </div>
 </section>
 
 <footer>
-  © Solarion Media
+  © Solarion Media. All rights reserved.
 </footer>
+
+<script>
+  // Переключение языков
+  function switchLang(lang) {
+    document.getElementById('ru').style.display = lang === 'ru' ? 'block' : 'none';
+    document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
+  }
+
+  // Анимация появления при скролле
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.1 };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
 
 </body>
 </html>
