@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Solarion.Media — Контакты</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
 
-  <!-- Google Font -->
+  <!-- =========================================
+       НАЗВАНИЕ СТРАНИЦЫ (можешь менять)
+       ========================================= -->
+  <title>Solarion.Media — Контакты</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =========================================
+       GOOGLE FONT (один, лёгкий, стабильный)
+       ========================================= -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- =========================================
+       GOOGLE ANALYTICS (АНАЛИТИКА)
+       ⚠️ ЗАМЕНИ G-XXXXXXXXXX на свой ID
+       ========================================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- =========================================
+       ВСЕ СТИЛИ В ОДНОМ МЕСТЕ
+       НИЧЕГО ВНЕ ЭТОГО ФАЙЛА НЕ НУЖНО
+       ========================================= -->
   <style>
     :root {
       --bg: #0e0e11;
@@ -32,6 +55,7 @@
       align-items: center;
     }
 
+    /* ===== КАРТОЧКА ===== */
     .card {
       background: var(--card);
       border-radius: 20px;
@@ -50,17 +74,18 @@
     h1 {
       font-size: 28px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       text-align: center;
     }
 
     p {
       text-align: center;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 26px;
       font-size: 15px;
     }
 
+    /* ===== КНОПКИ ===== */
     .buttons {
       display: flex;
       flex-direction: column;
@@ -69,8 +94,8 @@
 
     .btn {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       padding: 14px;
       border-radius: 14px;
       font-weight: 600;
@@ -80,20 +105,28 @@
       transition: all 0.25s ease;
     }
 
+    /* hover — подсветка */
     .btn:hover {
-      transform: scale(1.06);
+      transform: scale(1.07);
       box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      filter: brightness(1.1);
+      filter: brightness(1.15);
     }
 
+    /* click — микро-анимация */
+    .btn:active {
+      transform: scale(0.96);
+      opacity: 0.85;
+    }
+
+    /* ===== ФИРМЕННЫЕ ЦВЕТА СОЦСЕТЕЙ ===== */
     .telegram { background: #229ED9; }
     .whatsapp { background: #25D366; }
-    .viber { background: #7360F2; }
-    .email { background: #444; }
+    .viber    { background: #7360F2; }
+    .email    { background: #444; }
 
     footer {
-      text-align: center;
       margin-top: 22px;
+      text-align: center;
       font-size: 13px;
       color: var(--muted);
     }
@@ -101,31 +134,51 @@
 </head>
 
 <body>
+
+  <!-- =========================================
+       ОСНОВНОЙ БЛОК
+       ========================================= -->
   <div class="card">
     <h1>Solarion.Media</h1>
-    <p>Контакты и связь</p>
+    <p>Связь, сотрудничество, партнёрство</p>
 
+    <!-- =========================================
+         КНОПКИ — МЕНЯЕШЬ ТОЛЬКО ССЫЛКИ
+         ========================================= -->
     <div class="buttons">
-      <a class="btn telegram" href="https://t.me/solarion" target="_blank">
+
+      <!-- TELEGRAM -->
+      <a class="btn telegram"
+         href="https://t.me/solarion"
+         target="_blank">
         Telegram
       </a>
 
-      <a class="btn whatsapp" href="https://wa.me/375000000000" target="_blank">
+      <!-- WHATSAPP (замени номер) -->
+      <a class="btn whatsapp"
+         href="https://wa.me/375000000000"
+         target="_blank">
         WhatsApp
       </a>
 
-      <a class="btn viber" href="viber://chat?number=375000000000">
+      <!-- VIBER (замени номер) -->
+      <a class="btn viber"
+         href="viber://chat?number=375000000000">
         Viber
       </a>
 
-      <a class="btn email" href="mailto:solarionmedia@gmail.com">
+      <!-- EMAIL -->
+      <a class="btn email"
+         href="mailto:solarionmedia@gmail.com">
         Email
       </a>
+
     </div>
 
     <footer>
       © 2025 Solarion.Media
     </footer>
   </div>
+
 </body>
 </html>
