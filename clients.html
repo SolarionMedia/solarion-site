@@ -2,148 +2,130 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Solarion Clients - AI Studio</title>
+  <title>Solarion.Media — Контакты</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    :root {
+      --bg: #0e0e11;
+      --card: #16161d;
+      --text: #ffffff;
+      --muted: #9a9aab;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: "Arial", sans-serif;
-      background: #0f1115;
-      color: #ffffff;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
     }
 
-    header, footer {
-      text-align: center;
-      padding: 30px 20px;
-      background: #151821;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      color: #7aa2ff;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #cfcfcf;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    h1, h2 {
-      color: #ffffff;
-      margin-bottom: 20px;
-    }
-
-    p, li {
-      color: #cfcfcf;
-      margin-bottom: 15px;
-    }
-
-    .card-container {
+    body {
+      background: radial-gradient(circle at top, #1b1b27, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
-      margin-top: 30px;
+      align-items: center;
     }
 
     .card {
-      background: linear-gradient(145deg, #1b1e26, #0f1115);
-      border-radius: 15px;
-      padding: 25px;
-      width: 280px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      animation: fadeIn 0.6s ease;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #7aa2ff;
-    }
-
-    .card p {
-      color: #cfcfcf;
-      font-size: 0.95em;
-    }
-
-    .contact {
-      margin-top: 40px;
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
       text-align: center;
     }
 
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 15px;
-      background: #7aa2ff;
-      color: #0f1115;
+    p {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
+      transition: all 0.25s ease;
     }
 
-    .contact a:hover {
-      background: #5f88e0;
+    .btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      filter: brightness(1.1);
     }
 
-    footer p {
-      margin: 0;
-      font-size: 0.9em;
-      color: #777;
-    }
+    .telegram { background: #229ED9; }
+    .whatsapp { background: #25D366; }
+    .viber { background: #7360F2; }
+    .email { background: #444; }
 
+    footer {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
   </style>
 </head>
+
 <body>
+  <div class="card">
+    <h1>Solarion.Media</h1>
+    <p>Контакты и связь</p>
 
-<header>
-  <h1>Solarion</h1>
-  <p>AI-студия для контента, автоматизации и роста бизнеса</p>
-</header>
+    <div class="buttons">
+      <a class="btn telegram" href="https://t.me/solarion" target="_blank">
+        Telegram
+      </a>
 
-<section>
-  <h1>Наши кейсы и пакеты</h1>
-  <div class="card-container">
-    <div class="card">
-      <h3>Пакет "Старт"</h3>
-      <p>AI-контент и маркетинг для малого бизнеса. Быстрый старт, 1–2 кампании в месяц, готовые шаблоны.</p>
+      <a class="btn whatsapp" href="https://wa.me/375000000000" target="_blank">
+        WhatsApp
+      </a>
+
+      <a class="btn viber" href="viber://chat?number=375000000000">
+        Viber
+      </a>
+
+      <a class="btn email" href="mailto:solarionmedia@gmail.com">
+        Email
+      </a>
     </div>
-    <div class="card">
-      <h3>Пакет "Про"</h3>
-      <p>Полная автоматизация процессов: заявки, рассылки, аналитика, AI-скрипты и интеграции для вашего бизнеса.</p>
-    </div>
-    <div class="card">
-      <h3>Пакет "Премиум"</h3>
-      <p>AI-стратегия, комплексная поддержка, персональный менеджер, полный контроль и рост чеков.</p>
-    </div>
+
+    <footer>
+      © 2025 Solarion.Media
+    </footer>
   </div>
-
-  <div class="contact">
-    <h2>Связаться с нами</h2>
-    <a href="mailto:Solarionmedia@gmail.com">Email</a>
-    <a href="https://t.me/+375296909200" target="_blank">Telegram</a>
-    <a href="viber://chat?number=%2B375296909200">Viber</a>
-    <a href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
-  </div>
-</section>
-
-<footer>
-  <p>© Solarion Media. Все права защищены.</p>
-</footer>
-
 </body>
 </html>
