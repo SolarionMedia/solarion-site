@@ -1,199 +1,172 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Solarion — Услуги и цены</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #ffffff;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<title>Solarion.Media — AI Studio / AI-студия</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header, footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #151821;
-    }
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-517112874"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-517112874');
+</script>
 
-    header h1 {
-      font-size: 2.4em;
-      color: #7aa2ff;
-      margin: 0;
-    }
-
-    header p {
-      margin-top: 10px;
-      color: #cfcfcf;
-      font-size: 1.2em;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 50px 20px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #cfcfcf;
-      margin-bottom: 40px;
-    }
-
-    .pricing {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-    }
-
-    .card {
-      background: linear-gradient(145deg, #1b1e26, #0f1115);
-      border-radius: 16px;
-      padding: 30px;
-      width: 300px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card h3 {
-      color: #7aa2ff;
-      margin-top: 0;
-    }
-
-    .price {
-      font-size: 2em;
-      margin: 15px 0;
-      color: #ffffff;
-    }
-
-    .card ul {
-      padding-left: 18px;
-      color: #cfcfcf;
-    }
-
-    .card li {
-      margin-bottom: 10px;
-    }
-
-    .note {
-      font-size: 0.9em;
-      color: #9aa0b5;
-      margin-top: 10px;
-    }
-
-    .contact {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 14px 26px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #fff;
-      background: #7aa2ff;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      opacity: 0.85;
-      transform: translateY(-3px);
-    }
-
-    footer {
-      font-size: 0.9em;
-      color: #9aa0b5;
-    }
-
-    @media (max-width: 768px) {
-      .pricing {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+<style>
+:root{
+  --bg:#0b0b0f;
+  --card:#16161d;
+  --accent:#7aa2ff;
+  --text:#ffffff;
+  --muted:#9a9aab;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif;}
+body{background:radial-gradient(circle at top,#1b1b2f,var(--bg));color:var(--text);line-height:1.6;}
+header,footer{text-align:center;padding:50px 20px;}
+header h1{font-size:38px;margin-bottom:10px;}
+header p{color:var(--muted);max-width:700px;margin:0 auto;}
+section{max-width:1100px;margin:0 auto;padding:60px 20px;}
+h2{text-align:center;font-size:32px;margin-bottom:20px;}
+.sub{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 50px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;opacity:0;transform:translateY(30px);transition:all 0.6s ease-out;}
+.card{background:linear-gradient(145deg,#1b1e26,#0f1115);border-radius:22px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,.6);transition:.3s, transform .3s;}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 30px 70px rgba(0,0,0,.8);}
+.card h3{font-size:24px;margin-bottom:10px;color:var(--accent);}
+.price{font-size:30px;margin:20px 0;}
+.card ul{list-style:none;margin-bottom:25px;}
+.card li{margin-bottom:10px;color:#cfcfcf;}
+.btn{display:block;text-align:center;padding:14px;border-radius:14px;background:linear-gradient(135deg,#7aa2ff,#5a7cff);color:#fff;text-decoration:none;font-weight:600;transition:.25s, box-shadow .25s;}
+.btn:hover{transform:scale(1.05);box-shadow:0 6px 18px rgba(114,144,255,.35);}
+.note{text-align:center;margin-top:40px;color:var(--muted);font-size:14px;}
+.lang-switch{text-align:center;margin-bottom:30px;}
+.lang-switch button{margin:0 8px;padding:6px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:.2s;}
+.lang-switch button.active{background:var(--accent);color:#fff;}
+footer{color:var(--muted);font-size:14px;}
+/* POPUP */
+.popup{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;justify-content:center;align-items:center;}
+.popup.active{display:flex;}
+.popup-content{background:var(--card);padding:30px;border-radius:18px;width:90%;max-width:380px;}
+.popup-content input,.popup-content textarea{width:100%;margin-bottom:12px;padding:12px;border-radius:10px;border:none;}
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Solarion</h1>
-  <p>Услуги, пакеты и реальные цены</p>
+  <h1 id="title">Solarion.Media</h1>
+  <p id="subtitle">AI-студия, которая превращает контент, маркетинг и автоматизацию в поток заявок.</p>
+  <div class="lang-switch">
+    <button id="btn-ru" class="active" onclick="switchLang('ru')">RU</button>
+    <button id="btn-en" onclick="switchLang('en')">EN</button>
+  </div>
 </header>
 
 <section>
-  <h2>AI-решения для бизнеса</h2>
-  <p class="subtitle">
-    Чёткие пакеты. Понятный результат. Без воды и «волшебных кнопок».
-  </p>
+  <h2 id="pricing-title">Тарифы и решения</h2>
+  <p class="sub" id="pricing-sub">Прозрачные цены. Понятный результат. Мы не продаём часы — мы выстраиваем систему роста.</p>
 
-  <div class="pricing">
-
+  <div class="cards" id="cards-container">
     <div class="card">
-      <h3>🚀 Start</h3>
-      <div class="price">300 BYN</div>
-      <ul>
-        <li>AI-тексты / офферы</li>
-        <li>Сценарии Reels / Shorts</li>
-        <li>Анализ ниши</li>
-        <li>1 правка</li>
+      <h3 id="plan1-name">Старт</h3>
+      <div class="price" id="plan1-price">1 350 BYN</div>
+      <ul id="plan1-features">
+        <li>Анализ бизнеса и ниши</li>
+        <li>AI-стратегия роста</li>
+        <li>Контент-пак (офферы, тексты)</li>
+        <li>Рекомендации по заявкам</li>
       </ul>
-      <div class="note">Подходит для теста и старта</div>
+      <a href="#" class="btn" id="plan1-btn" onclick="openPopup('Старт')">Выбрать</a>
     </div>
-
     <div class="card">
-      <h3>⚡ Growth</h3>
-      <div class="price">750 BYN</div>
-      <ul>
-        <li>Контент + маркетинг</li>
-        <li>AI-воронка</li>
-        <li>Упаковка оффера</li>
-        <li>Интеграция AI-инструментов</li>
-        <li>2–3 итерации улучшений</li>
+      <h3 id="plan2-name">Рост</h3>
+      <div class="price" id="plan2-price">3 750 BYN</div>
+      <ul id="plan2-features">
+        <li>Всё из тарифа «Старт»</li>
+        <li>SMM и продвижение</li>
+        <li>Базовая AI-автоматизация</li>
+        <li>Настройка заявок</li>
       </ul>
-      <div class="note">Самый популярный пакет</div>
+      <a href="#" class="btn" id="plan2-btn" onclick="openPopup('Рост')">Выбрать</a>
     </div>
-
     <div class="card">
-      <h3>🧠 Pro System</h3>
-      <div class="price">1500 BYN</div>
-      <ul>
-        <li>Полная AI-система под бизнес</li>
-        <li>Автоматизация заявок</li>
-        <li>AI-контент + маркетинг</li>
-        <li>Настройка процессов</li>
-        <li>Поддержка 14 дней</li>
+      <h3 id="plan3-name">Масштаб</h3>
+      <div class="price" id="plan3-price">7 500 BYN</div>
+      <ul id="plan3-features">
+        <li>Полный digital-пакет</li>
+        <li>AI-системы под бизнес</li>
+        <li>Аналитика и KPI</li>
+        <li>Оптимизация процессов</li>
       </ul>
-      <div class="note">Для тех, кто думает системно</div>
+      <a href="#" class="btn" id="plan3-btn" onclick="openPopup('Масштаб')">Выбрать</a>
     </div>
-
   </div>
 
-  <div class="contact">
-    <h2>Готовы обсудить?</h2>
-    <a class="btn" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
-    <a class="btn" href="mailto:solarionmedia@gmail.com">Email</a>
-  </div>
+  <p class="note" id="note-text">Все проекты обсуждаются индивидуально. Мы уточняем задачи и подтверждаем тариф перед стартом.</p>
 </section>
 
-<footer>
-  © Solarion Media. AI for real business.
-</footer>
+<footer>© 2025 Solarion.Media</footer>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3 id="popupTitle">Заявка</h3>
+    <form action="https://formspree.io/f/dc3459c3c7d84a90a5b95ca13dda63fe" method="POST">
+      <input type="email" name="email" placeholder="Ваш email" required>
+      <textarea name="message" placeholder="Опишите задачу" required></textarea>
+      <button class="btn" type="submit" id="popup-btn">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const langData = {
+  ru:{title:'Solarion.Media',subtitle:'AI-студия, которая превращает контент, маркетинг и автоматизацию в поток заявок.',pricingTitle:'Тарифы и решения',pricingSub:'Прозрачные цены. Понятный результат. Мы не продаём часы — мы выстраиваем систему роста.',plan1:{name:'Старт',price:'1 350 BYN',features:['Анализ бизнеса и ниши','AI-стратегия роста','Контент-пак (офферы, тексты)','Рекомендации по заявкам'],btn:'Выбрать'},plan2:{name:'Рост',price:'3 750 BYN',features:['Всё из тарифа «Старт»','SMM и продвижение','Базовая AI-автоматизация','Настройка заявок'],btn:'Выбрать'},plan3:{name:'Масштаб',price:'7 500 BYN',features:['Полный digital-пакет','AI-системы под бизнес','Аналитика и KPI','Оптимизация процессов'],btn:'Выбрать'},note:'Все проекты обсуждаются индивидуально. Мы уточняем задачи и подтверждаем тариф перед стартом.',popupTitle:'Заявка',popupBtn:'Отправить'},
+  en:{title:'Solarion.Media',subtitle:'AI studio that turns content, marketing, and automation into a steady stream of leads.',pricingTitle:'Pricing & Solutions',pricingSub:'Transparent pricing. Clear results. We don’t sell hours — we build growth systems.',plan1:{name:'Starter',price:'$450',features:['Business analysis & niche research','AI growth strategy','Content package (texts, offers)','Lead generation recommendations'],btn:'Book a call'},plan2:{name:'Growth',price:'$1,250',features:['Everything in Starter','SMM & promotion strategy','Basic AI automation','Lead capture setup'],btn:'Book a call'},plan3:{name:'Scale',price:'$2,500',features:['Full digital package','AI systems tailored for your business','Analytics & KPI optimization','Process improvement'],btn:'Book a call'},note:'All projects are discussed individually. We clarify tasks and confirm the package before starting.',popupTitle:'Booking Request',popupBtn:'Send'}
+};
+
+function switchLang(lang){
+  document.getElementById('btn-ru').classList.toggle('active',lang==='ru');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  const data=langData[lang];
+  document.getElementById('title').innerText=data.title;
+  document.getElementById('subtitle').innerText=data.subtitle;
+  document.getElementById('pricing-title').innerText=data.pricingTitle;
+  document.getElementById('pricing-sub').innerText=data.pricingSub;
+  document.getElementById('plan1-name').innerText=data.plan1.name;
+  document.getElementById('plan1-price').innerText=data.plan1.price;
+  document.getElementById('plan1-features').innerHTML = data.plan1.features.map(f=>' <li>'+f+'</li>').join('');
+  document.getElementById('plan1-btn').innerText=data.plan1.btn;
+  document.getElementById('plan2-name').innerText=data.plan2.name;
+  document.getElementById('plan2-price').innerText=data.plan2.price;
+  document.getElementById('plan2-features').innerHTML = data.plan2.features.map(f=>' <li>'+f+'</li>').join('');
+  document.getElementById('plan2-btn').innerText=data.plan2.btn;
+  document.getElementById('plan3-name').innerText=data.plan3.name;
+  document.getElementById('plan3-price').innerText=data.plan3.price;
+  document.getElementById('plan3-features').innerHTML = data.plan3.features.map(f=>' <li>'+f+'</li>').join('');
+  document.getElementById('plan3-btn').innerText=data.plan3.btn;
+  document.getElementById('note-text').innerText=data.note;
+  document.getElementById('popupTitle').innerText=data.popupTitle;
+  document.getElementById('popup-btn').innerText=data.popupBtn;
+}
+
+function openPopup(plan){
+  const lang=document.getElementById('btn-ru').classList.contains('active')?'ru':'en';
+  document.getElementById('popup').classList.add('active');
+  document.getElementById('popupTitle').innerText=lang==='ru'?'Заявка — тариф «'+plan+'»':'Booking Request — '+plan;
+}
+
+document.getElementById('popup').onclick=e=>{
+  if(e.target.id==='popup') e.target.classList.remove('active');
+};
+
+// ANIMATION ON SCROLL
+const cardsContainer=document.getElementById('cards-container');
+window.addEventListener('scroll',()=>{
+  const rect=cardsContainer.getBoundingClientRect();
+  if(rect.top<window.innerHeight-100){cardsContainer.style.opacity=1;cardsContainer.style.transform='translateY(0)';}
+});
+</script>
 
 </body>
 </html>
+
