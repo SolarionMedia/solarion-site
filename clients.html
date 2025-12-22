@@ -1,201 +1,198 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Solarion.Media — AI & Digital Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-517112874"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-517112874');
-  </script>
-
+  <meta charset="UTF-8">
+  <title>Solarion — Услуги и цены</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --bg:#0b0d12;
-      --card:#161922;
-      --accent:#7aa2ff;
-      --text:#ffffff;
-      --muted:#b5b8c5;
-      --glow:rgba(122,162,255,.35);
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #ffffff;
+      line-height: 1.6;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
-    body{background:radial-gradient(circle at top,#1b1f2e,var(--bg));color:var(--text)}
-
-    header{text-align:center;padding:80px 20px}
-    header h1{font-size:3em;color:var(--accent)}
-    header p{font-size:1.25em;color:var(--muted);margin-top:10px}
-
-    section{max-width:1100px;margin:auto;padding:70px 20px}
-
-    h2{text-align:center;font-size:2.2em;margin-bottom:20px;color:var(--accent)}
-    .subtitle{text-align:center;color:var(--muted);margin-bottom:50px}
-
-    /* Cards */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-    .card{
-      background:var(--card);
-      padding:28px;
-      border-radius:20px;
-      box-shadow:0 20px 50px rgba(0,0,0,.55);
-      transition:.35s;
-      position:relative;
-    }
-    .card:hover{
-      transform:translateY(-10px) scale(1.02);
-      box-shadow:0 30px 80px var(--glow);
-    }
-    .card h3{color:var(--accent);margin-bottom:12px}
-    .card p{color:var(--muted);margin-bottom:12px}
-
-    /* Price */
-    .price{font-size:1.8em;font-weight:700;margin:18px 0}
-
-    /* Buttons */
-    .btn{
-      display:inline-block;
-      margin-top:10px;
-      padding:14px 26px;
-      border-radius:14px;
-      background:linear-gradient(135deg,#7aa2ff,#4d6fff);
-      color:#fff;
-      text-decoration:none;
-      font-weight:600;
-      transition:.25s;
-      box-shadow:0 10px 30px rgba(0,0,0,.5);
-    }
-    .btn:hover{
-      transform:scale(1.08);
-      box-shadow:0 0 35px var(--glow);
+    header, footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #151821;
     }
 
-    /* Contact buttons */
-    .contacts{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:16px;
-      margin-top:30px;
-    }
-    .tg{background:linear-gradient(135deg,#229ED9,#1b7db3)}
-    .wa{background:linear-gradient(135deg,#25D366,#1ea855)}
-    .vb{background:linear-gradient(135deg,#7360F2,#5a46d6)}
-    .mail{background:linear-gradient(135deg,#555,#333)}
-
-    footer{
-      text-align:center;
-      padding:30px;
-      background:#141722;
-      color:var(--muted);
-      font-size:14px;
+    header h1 {
+      font-size: 2.4em;
+      color: #7aa2ff;
+      margin: 0;
     }
 
-    @media(max-width:600px){
-      header h1{font-size:2.3em}
+    header p {
+      margin-top: 10px;
+      color: #cfcfcf;
+      font-size: 1.2em;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #cfcfcf;
+      margin-bottom: 40px;
+    }
+
+    .pricing {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #1b1e26, #0f1115);
+      border-radius: 16px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #7aa2ff;
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 2em;
+      margin: 15px 0;
+      color: #ffffff;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      color: #cfcfcf;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #9aa0b5;
+      margin-top: 10px;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      background: #7aa2ff;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #9aa0b5;
+    }
+
+    @media (max-width: 768px) {
+      .pricing {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <h1>Solarion.Media</h1>
-  <p>AI-студия для роста бизнеса, контента и автоматизации</p>
+  <h1>Solarion</h1>
+  <p>Услуги, пакеты и реальные цены</p>
 </header>
 
 <section>
-  <h2>Что мы делаем</h2>
-  <p class="subtitle">Без хайпа. Без лишних инструментов. Только системы, которые работают.</p>
+  <h2>AI-решения для бизнеса</h2>
+  <p class="subtitle">
+    Чёткие пакеты. Понятный результат. Без воды и «волшебных кнопок».
+  </p>
 
-  <div class="grid">
+  <div class="pricing">
+
     <div class="card">
-      <h3>AI-контент</h3>
-      <p>Тексты, сценарии, офферы, контент-системы под рост.</p>
+      <h3>🚀 Start</h3>
+      <div class="price">300 BYN</div>
+      <ul>
+        <li>AI-тексты / офферы</li>
+        <li>Сценарии Reels / Shorts</li>
+        <li>Анализ ниши</li>
+        <li>1 правка</li>
+      </ul>
+      <div class="note">Подходит для теста и старта</div>
     </div>
+
     <div class="card">
-      <h3>AI-маркетинг</h3>
-      <p>Упаковка, воронки, реклама, аналитика и масштабирование.</p>
+      <h3>⚡ Growth</h3>
+      <div class="price">750 BYN</div>
+      <ul>
+        <li>Контент + маркетинг</li>
+        <li>AI-воронка</li>
+        <li>Упаковка оффера</li>
+        <li>Интеграция AI-инструментов</li>
+        <li>2–3 итерации улучшений</li>
+      </ul>
+      <div class="note">Самый популярный пакет</div>
     </div>
+
     <div class="card">
-      <h3>AI-автоматизация</h3>
-      <p>Заявки, коммуникации, процессы, экономия времени.</p>
+      <h3>🧠 Pro System</h3>
+      <div class="price">1500 BYN</div>
+      <ul>
+        <li>Полная AI-система под бизнес</li>
+        <li>Автоматизация заявок</li>
+        <li>AI-контент + маркетинг</li>
+        <li>Настройка процессов</li>
+        <li>Поддержка 14 дней</li>
+      </ul>
+      <div class="note">Для тех, кто думает системно</div>
     </div>
+
   </div>
-</section>
 
-<section>
-  <h2>Тарифы</h2>
-  <p class="subtitle">Средний рынок Беларуси • прозрачные цены</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Starter</h3>
-      <div class="price">900 BYN</div>
-      <p>Анализ бизнеса, стратегия, контент-пак.</p>
-      <p>Подходит для быстрого старта.</p>
-      <a class="btn mail" href="mailto:solarionmedia@gmail.com?subject=Starter">Выбрать</a>
-    </div>
-
-    <div class="card">
-      <h3>Growth</h3>
-      <div class="price">2 500 BYN</div>
-      <p>Starter + продвижение, SMM, базовая автоматизация.</p>
-      <p>Рост заявок и системность.</p>
-      <a class="btn mail" href="mailto:solarionmedia@gmail.com?subject=Growth">Выбрать</a>
-    </div>
-
-    <div class="card">
-      <h3>Premium</h3>
-      <div class="price">5 000 BYN</div>
-      <p>Полный digital-пак + AI-системы.</p>
-      <p>Работа по KPI и аналитике.</p>
-      <a class="btn mail" href="mailto:solarionmedia@gmail.com?subject=Premium">Выбрать</a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Примеры задач (кейсы)</h2>
-  <p class="subtitle">Типовые сценарии, с которыми к нам приходят</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>B2B-компания</h3>
-      <p>Автоматизация заявок и коммуникаций → меньше ручной работы.</p>
-    </div>
-    <div class="card">
-      <h3>Эксперт / блогер</h3>
-      <p>Контент-система + упаковка → рост аудитории.</p>
-    </div>
-    <div class="card">
-      <h3>Малый бизнес</h3>
-      <p>AI-маркетинг + реклама → стабильные лиды.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Связь</h2>
-  <p class="subtitle">Отвечаем быстро. Без ботов.</p>
-
-  <div class="contacts">
-    <a class="btn tg" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
-    <a class="btn wa" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
-    <a class="btn vb" href="viber://chat?number=375296909200">Viber</a>
-    <a class="btn mail" href="mailto:solarionmedia@gmail.com">Email</a>
+  <div class="contact">
+    <h2>Готовы обсудить?</h2>
+    <a class="btn" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
+    <a class="btn" href="mailto:solarionmedia@gmail.com">Email</a>
   </div>
 </section>
 
 <footer>
-  © 2025 Solarion.Media — AI & Digital Studio
+  © Solarion Media. AI for real business.
 </footer>
 
 </body>
