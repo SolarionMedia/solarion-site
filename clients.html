@@ -2,175 +2,179 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Solarion.Media — AI Studio / AI-студия</title>
+<title>Solarion.Media — AI Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- GOOGLE ANALYTICS -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-517112874"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-517112874');
-</script>
 
 <style>
 :root{
-  --bg:#0b0b0f;
-  --card:#16161d;
-  --accent:#7aa2ff;
-  --hover: #5a7cff;
+  --bg:#0b0d14;
+  --card:#161a2b;
+  --accent:#3b82f6;
+  --accent-hover:#2563eb;
   --text:#ffffff;
-  --muted:#9a9aab;
+  --muted:#9ca3af;
 }
-*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif;}
-body{background:radial-gradient(circle at top,#1b1b2f,var(--bg));color:var(--text);line-height:1.6;}
-header,footer{text-align:center;padding:50px 20px;}
-header h1{font-size:38px;margin-bottom:10px;}
-header p{color:var(--muted);max-width:700px;margin:0 auto;}
-.lang-switch{text-align:center;margin-bottom:30px;}
-.lang-switch button{margin:0 8px;padding:6px 14px;border:none;border-radius:8px;cursor:pointer;font-weight:600;transition:.2s;}
-.lang-switch button.active{background:var(--accent);color:#fff;}
-section{max-width:1100px;margin:0 auto;padding:60px 20px;}
-h2{text-align:center;font-size:32px;margin-bottom:20px;}
-.sub{text-align:center;color:var(--muted);max-width:720px;margin:0 auto 50px;}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;opacity:0;transform:translateY(30px);transition:all 0.6s ease-out;}
-.card{background:linear-gradient(145deg,#1b1e26,#0f1115);border-radius:22px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,.6);transition:.3s, transform .3s;}
-.card:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 30px 70px rgba(0,0,0,.85);}
-.card h3{font-size:24px;margin-bottom:10px;color:var(--accent);}
-.price{font-size:30px;margin:20px 0;}
-.card ul{list-style:none;margin-bottom:25px;}
-.card li{margin-bottom:10px;color:#cfcfcf;}
-.btn{display:block;text-align:center;padding:14px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--hover));color:#fff;text-decoration:none;font-weight:600;transition:.25s, box-shadow .25s;}
-.btn:hover{transform:scale(1.07);box-shadow:0 8px 22px rgba(114,144,255,.5);}
-.btn-email{background:#0076ff;color:#fff;text-decoration:none;padding:14px;border-radius:14px;font-weight:600;transition:.3s;box-shadow:0 8px 25px rgba(0,118,255,.45);}
-.btn-email:hover{background:#005adf;transform:scale(1.07);box-shadow:0 10px 28px rgba(0,90,223,.55);}
-.contact-info{text-align:center;margin-top:40px;color:var(--muted);line-height:1.5;}
-.popup{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;justify-content:center;align-items:center;}
-.popup.active{display:flex;}
-.popup-content{background:var(--card);padding:30px;border-radius:18px;width:90%;max-width:380px;}
-.popup-content input,.popup-content textarea{width:100%;margin-bottom:12px;padding:12px;border-radius:10px;border:none;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif;}
+body{background:var(--bg);color:var(--text);line-height:1.6;}
+header{text-align:center;padding:60px 20px;}
+header h1{font-size:2.6em;color:var(--accent);}
+header p{color:var(--muted);margin-top:10px;max-width:700px;margin-inline:auto;}
+.lang-switch{margin-top:20px;}
+.lang-switch button{
+  margin:0 6px;
+  padding:8px 16px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background:#1f2937;
+  color:#fff;
+  font-weight:600;
+  transition:.3s;
+}
+.lang-switch button.active,
+.lang-switch button:hover{
+  background:var(--accent);
+}
+section{padding:60px 20px;}
+h2{text-align:center;font-size:2.1em;margin-bottom:10px;}
+.sub{text-align:center;color:var(--muted);margin-bottom:40px;}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  max-width:1100px;
+  margin:auto;
+}
+.card{
+  background:linear-gradient(180deg,#1b2140,#12162a);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.55);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 30px 70px rgba(0,0,0,.75);
+}
+.card h3{font-size:1.5em;color:var(--accent);}
+.price{font-size:1.8em;margin:18px 0;}
+.card ul{padding-left:18px;margin-bottom:22px;}
+.card li{margin-bottom:10px;}
+.btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-hover));
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+.btn:hover{transform:scale(1.08);}
+.btn-email{
+  margin-top:30px;
+  background:#0076ff;
+}
+.btn-email:hover{background:#005adf;}
+footer{
+  text-align:center;
+  padding:50px 20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:var(--muted);
+  font-size:.95em;
+}
 </style>
 </head>
+
 <body>
 
 <header>
   <h1 id="title">Solarion.Media</h1>
-  <p id="subtitle">AI-студия, которая превращает контент, маркетинг и автоматизацию в поток заявок.</p>
+  <p id="subtitle">
+    AI-студия полного цикла. Контент, маркетинг и автоматизация,
+    которые превращают трафик в деньги.
+  </p>
   <div class="lang-switch">
-    <button id="btn-ru" class="active" onclick="switchLang('ru')">RU</button>
-    <button id="btn-en" onclick="switchLang('en')">EN</button>
+    <button id="ruBtn" class="active" onclick="switchLang('ru')">RU</button>
+    <button id="enBtn" onclick="switchLang('en')">EN</button>
   </div>
 </header>
 
 <section>
-  <h2 id="pricing-title">Тарифы и решения</h2>
-  <p class="sub" id="pricing-sub">Прозрачные цены. Понятный результат. Мы не продаём часы — мы выстраиваем систему роста.</p>
+  <h2 id="pricingTitle">Тарифы и решения</h2>
+  <p class="sub" id="pricingSub">Средний рынок Беларуси • Прозрачные цены</p>
 
-  <div class="cards" id="cards-container">
+  <div class="cards">
+
     <div class="card">
-      <h3 id="plan1-name">Старт</h3>
-      <div class="price" id="plan1-price">1 350 BYN</div>
-      <ul id="plan1-features">
+      <h3 id="p1">Старт</h3>
+      <div class="price" id="p1price">1 350 BYN</div>
+      <ul id="p1list">
         <li>Анализ бизнеса и ниши</li>
         <li>AI-стратегия роста</li>
         <li>Контент-пак (офферы, тексты)</li>
         <li>Рекомендации по заявкам</li>
       </ul>
-      <a href="#" class="btn" id="plan1-btn" onclick="openPopup('Старт')">Выбрать</a>
+      <a href="mailto:solarionmedia@gmail.com" class="btn">Выбрать</a>
     </div>
+
     <div class="card">
-      <h3 id="plan2-name">Рост</h3>
-      <div class="price" id="plan2-price">3 750 BYN</div>
-      <ul id="plan2-features">
+      <h3 id="p2">Рост</h3>
+      <div class="price" id="p2price">3 750 BYN</div>
+      <ul id="p2list">
         <li>Всё из тарифа «Старт»</li>
         <li>SMM и продвижение</li>
-        <li>Базовая AI-автоматизация</li>
-        <li>Настройка заявок</li>
+        <li>Автоматизация заявок</li>
+        <li>Системный рост лидов</li>
       </ul>
-      <a href="#" class="btn" id="plan2-btn" onclick="openPopup('Рост')">Выбрать</a>
+      <a href="mailto:solarionmedia@gmail.com" class="btn">Выбрать</a>
     </div>
+
     <div class="card">
-      <h3 id="plan3-name">Премиум</h3>
-      <div class="price" id="plan3-price">7 500 BYN</div>
-      <ul id="plan3-features">
+      <h3 id="p3">Премиум</h3>
+      <div class="price" id="p3price">7 500 BYN</div>
+      <ul id="p3list">
         <li>Полный digital-пакет</li>
         <li>AI-системы под бизнес</li>
         <li>Аналитика и KPI</li>
-        <li>Оптимизация процессов</li>
+        <li>Личное сопровождение</li>
       </ul>
-      <a href="#" class="btn" id="plan3-btn" onclick="openPopup('Премиум')">Выбрать</a>
+      <a href="mailto:solarionmedia@gmail.com" class="btn">Выбрать</a>
     </div>
+
   </div>
 
-  <div class="contact-info">
-    <p>Адрес: Беларусь, г. Минск, Аранская, 8</p>
-    <p>Время работы: 9:00 — 18:00, без выходных</p>
-    <p>Email: <a href="#" class="btn-email" onclick="openPopup('Email')">Email</a> | Тел.: +375 29 690-92-00</p>
+  <div style="max-width:420px;margin:50px auto 0;">
+    <a href="mailto:solarionmedia@gmail.com" class="btn btn-email">Email</a>
   </div>
 </section>
 
-<footer>© 2025 Solarion.Media</footer>
-
-<div class="popup" id="popup">
-  <div class="popup-content">
-    <h3 id="popupTitle">Заявка</h3>
-    <form action="https://formspree.io/f/dc3459c3c7d84a90a5b95ca13dda63fe" method="POST">
-      <input type="email" name="email" placeholder="Ваш email" required>
-      <textarea name="message" placeholder="Опишите задачу" required></textarea>
-      <button class="btn-email" type="submit" id="popup-btn">Отправить</button>
-    </form>
-  </div>
-</div>
+<footer>
+  <p>
+    Беларусь, г. Минск, ул. Аранская, 8<br>
+    Время работы: 9:00 – 18:00 • Без выходных
+  </p>
+</footer>
 
 <script>
-const langData={
-  ru:{title:'Solarion.Media',subtitle:'AI-студия, которая превращает контент, маркетинг и автоматизацию в поток заявок.',pricingTitle:'Тарифы и решения',pricingSub:'Прозрачные цены. Понятный результат. Мы не продаём часы — мы выстраиваем систему роста.',plan1:{name:'Старт',price:'1 350 BYN',features:['Анализ бизнеса и ниши','AI-стратегия роста','Контент-пак (офферы, тексты)','Рекомендации по заявкам'],btn:'Выбрать'},plan2:{name:'Рост',price:'3 750 BYN',features:['Всё из тарифа «Старт»','SMM и продвижение','Базовая AI-автоматизация','Настройка заявок'],btn:'Выбрать'},plan3:{name:'Премиум',price:'7 500 BYN',features:['Полный digital-пакет','AI-системы под бизнес','Аналитика и KPI','Оптимизация процессов'],btn:'Выбрать'},popupBtn:'Отправить'},
-  en:{title:'Solarion.Media',subtitle:'AI studio that turns content, marketing, and automation into a steady stream of leads.',pricingTitle:'Pricing & Solutions',pricingSub:'Transparent pricing. Clear results. We don’t sell hours — we build growth systems.',plan1:{name:'Starter',price:'$450',features:['Business analysis & niche research','AI growth strategy','Content package (texts, offers)','Lead generation recommendations'],btn:'Book a call'},plan2:{name:'Growth',price:'$1,250',features:['Everything in Starter','SMM & promotion strategy','Basic AI automation','Lead capture setup'],btn:'Book a call'},plan3:{name:'Premium',price:'$2,500',features:['Full digital package','AI systems tailored for your business','Analytics & KPI optimization','Process improvement'],btn:'Book a call'},popupBtn:'Email'}
-};
-
 function switchLang(lang){
-  document.getElementById('btn-ru').classList.toggle('active',lang==='ru');
-  document.getElementById('btn-en').classList.toggle('active',lang==='en');
-  const data=langData[lang];
-  document.getElementById('title').innerText=data.title;
-  document.getElementById('subtitle').innerText=data.subtitle;
-  document.getElementById('pricing-title').innerText=data.pricingTitle;
-  document.getElementById('pricing-sub').innerText=data.pricingSub;
-  document.getElementById('plan1-name').innerText=data.plan1.name;
-  document.getElementById('plan1-price').innerText=data.plan1.price;
-  document.getElementById('plan1-features').innerHTML=data.plan1.features.map(f=>' <li>'+f+'</li>').join('');
-  document.getElementById('plan1-btn').innerText=data.plan1.btn;
-  document.getElementById('plan2-name').innerText=data.plan2.name;
-  document.getElementById('plan2-price').innerText=data.plan2.price;
-  document.getElementById('plan2-features').innerHTML=data.plan2.features.map(f=>' <li>'+f+'</li>').join('');
-  document.getElementById('plan2-btn').innerText=data.plan2.btn;
-  document.getElementById('plan3-name').innerText=data.plan3.name;
-  document.getElementById('plan3-price').innerText=data.plan3.price;
-  document.getElementById('plan3-features').innerHTML=data.plan3.features.map(f=>' <li>'+f+'</li>').join('');
-  document.getElementById('plan3-btn').innerText=data.plan3.btn;
-  document.getElementById('popup-btn').innerText=data.popupBtn;
+  document.getElementById('ruBtn').classList.toggle('active',lang==='ru');
+  document.getElementById('enBtn').classList.toggle('active',lang==='en');
+
+  if(lang==='en'){
+    title.innerText='Solarion.Media';
+    subtitle.innerText='Full-cycle AI studio. Marketing, content and automation that drive revenue.';
+    pricingTitle.innerText='Pricing Plans';
+    pricingSub.innerText='Transparent pricing • Average EU market';
+    p1.innerText='Start';
+    p2.innerText='Growth';
+    p3.innerText='Premium';
+  }else{
+    location.reload();
+  }
 }
-
-function openPopup(plan){
-  const lang=document.getElementById('btn-ru').classList.contains('active')?'ru':'en';
-  document.getElementById('popup').classList.add('active');
-  document.getElementById('popupTitle').innerText=lang==='ru'?'Заявка — тариф «'+plan+'»':'Booking Request — '+plan;
-}
-
-document.getElementById('popup').onclick=e=>{
-  if(e.target.id==='popup') e.target.classList.remove('active');
-};
-
-// Scroll animation
-const cardsContainer=document.getElementById('cards-container');
-window.addEventListener('scroll',()=>{
-  const rect=cardsContainer.getBoundingClientRect();
-  if(rect.top<window.innerHeight-100){cardsContainer.style.opacity=1;cardsContainer.style.transform='translateY(0)';}
-});
 </script>
 
 </body>
 </html>
-
-
