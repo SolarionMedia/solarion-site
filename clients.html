@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Solarion.Media — AI Digital Studio</title>
+<title>Solarion.Media — Тарифы</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -25,44 +25,32 @@ line-height:1.6;
 
 header{
 text-align:center;
-padding:50px 20px;
+padding:40px 20px;
 }
 
-header h1{
-font-size:42px;
-color:var(--accent2);
-}
-
-header p{
-margin-top:10px;
-color:var(--muted);
-}
+header h1{font-size:40px;color:var(--accent2)}
+header p{color:var(--muted);margin-top:8px}
 
 .lang{
-margin-top:15px;
+margin-top:12px;
 }
-
 .lang button{
-background:none;
-border:none;
+background:none;border:none;
 color:var(--accent2);
 font-weight:700;
 cursor:pointer;
-margin:0 10px;
-font-size:14px;
+margin:0 8px;
 }
 
 section{
 max-width:1100px;
 margin:0 auto;
-padding:50px 20px;
+padding:40px 20px;
 }
-
-h2{text-align:center;margin-bottom:40px}
 
 .pricing{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
@@ -75,38 +63,17 @@ transition:.4s;
 }
 
 .plan:hover{
-transform:translateY(-10px);
+transform:translateY(-8px);
 box-shadow:0 30px 70px rgba(76,124,255,.35);
 }
 
-.plan h3{
-color:var(--accent2);
-margin-bottom:10px;
-}
+.plan h3{color:var(--accent2)}
+.price{font-size:28px;font-weight:800;margin:10px 0}
 
-.price{
-font-size:28px;
-font-weight:800;
-margin-bottom:10px;
-}
-
-.toggle{
-cursor:pointer;
-color:var(--accent2);
-font-weight:600;
-margin-top:10px;
-}
-
-.details{
-display:none;
-margin-top:15px;
-color:var(--muted);
-}
-
-.details ul{margin-left:20px}
+ul{margin-left:18px;color:var(--muted)}
 
 button.choose{
-margin-top:20px;
+margin-top:18px;
 width:100%;
 padding:14px;
 border:none;
@@ -120,9 +87,19 @@ transition:.3s;
 
 button.choose:hover{transform:scale(1.05)}
 
+.deep{
+display:none;
+margin-top:15px;
+background:#0f1115;
+border-radius:14px;
+padding:15px;
+font-size:14px;
+color:var(--muted);
+}
+
 .contacts{
-margin-top:60px;
 text-align:center;
+margin-top:60px;
 }
 
 .contact-buttons{
@@ -151,11 +128,12 @@ transform:translateY(-5px) scale(1.05);
 .whatsapp{background:#25d366}
 .viber{background:#7360f2}
 
-footer{
-text-align:center;
-padding:30px 20px;
-color:var(--muted);
-font-size:14px;
+.back{
+display:inline-block;
+margin-top:30px;
+color:var(--accent2);
+text-decoration:none;
+font-weight:700;
 }
 </style>
 </head>
@@ -164,67 +142,82 @@ font-size:14px;
 
 <header>
 <h1>Solarion.Media</h1>
-<p id="subtitle">AI-студия для роста бизнеса</p>
+<p id="subtitle">Тарифы и сотрудничество</p>
 <div class="lang">
 <button onclick="switchLang('ru')">RU</button>
 <button onclick="switchLang('en')">EN</button>
 </div>
 </header>
 
-<section id="content-ru">
-<h2>Тарифы</h2>
+<section id="ru">
 
 <div class="pricing">
 
 <div class="plan">
 <h3>Старт</h3>
 <div class="price">1 350 BYN</div>
-<div class="toggle" onclick="toggle(this)">Что входит ↓</div>
-<div class="details">
 <ul>
-<li>Анализ бизнеса</li>
-<li>Контент-стратегия</li>
-<li>AI-офферы</li>
-<li>Подготовка к запуску</li>
+<li>Анализ бизнеса и ниши</li>
+<li>AI-стратегия роста</li>
+<li>Контент-пак</li>
+<li>Рекомендации по заявкам</li>
 </ul>
+
+<button class="choose" onclick="toggle(this)">Выбрать</button>
+
+<div class="deep">
+<b>Что вы получите:</b><br>
+Чёткое понимание, как привлекать клиентов с помощью AI,  
+готовые тексты и офферы + план действий на 30 дней.
+<br><br>
+<b>Подходит:</b> малому бизнесу и личным брендам.
 </div>
-<button class="choose">Выбрать</button>
 </div>
 
 <div class="plan">
 <h3>Рост</h3>
 <div class="price">3 750 BYN</div>
-<div class="toggle" onclick="toggle(this)">Что входит ↓</div>
-<div class="details">
 <ul>
-<li>Всё из тарифа «Старт»</li>
+<li>Всё из «Старт»</li>
 <li>SMM и продвижение</li>
 <li>Автоматизация заявок</li>
-<li>Базовая аналитика</li>
+<li>Аналитика</li>
 </ul>
+
+<button class="choose" onclick="toggle(this)">Выбрать</button>
+
+<div class="deep">
+<b>Результат:</b><br>
+Стабильный поток заявок, автоматизированные ответы,
+системный маркетинг вместо хаоса.
+<br><br>
+<b>Подходит:</b> компаниям, которые хотят масштаб.
 </div>
-<button class="choose">Выбрать</button>
 </div>
 
 <div class="plan">
 <h3>Premium</h3>
 <div class="price">7 500 BYN</div>
-<div class="toggle" onclick="toggle(this)">Что входит ↓</div>
-<div class="details">
 <ul>
-<li>Полный digital-пакет</li>
+<li>Полный digital-пак</li>
 <li>AI-системы</li>
 <li>KPI и аналитика</li>
 <li>Личное сопровождение</li>
 </ul>
+
+<button class="choose" onclick="toggle(this)">Выбрать</button>
+
+<div class="deep">
+<b>Результат:</b><br>
+AI как часть бизнеса: заявки, аналитика, решения по цифрам.
+<br><br>
+<b>Формат:</b> партнёрство.
 </div>
-<button class="choose">Выбрать</button>
 </div>
 
 </div>
 
 <div class="contacts">
-<h2>Связаться с нами</h2>
 <p>Беларусь, г. Минск, Аранская 8<br>Пн–Вс • 9:00–18:00</p>
 
 <div class="contact-buttons">
@@ -233,64 +226,29 @@ font-size:14px;
 <a class="whatsapp" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
 <a class="viber" href="viber://chat?number=%2B375296909200">Viber</a>
 </div>
+
+<a class="back" href="index.html">← На главную</a>
 </div>
+
 </section>
 
-<section id="content-en" style="display:none">
-<h2>Pricing</h2>
-
-<div class="pricing">
-
-<div class="plan">
-<h3>Start</h3>
-<div class="price">$450</div>
-<div class="toggle" onclick="toggle(this)">Details ↓</div>
-<div class="details">
-<ul>
-<li>Business analysis</li>
-<li>Content strategy</li>
-<li>AI offers</li>
-<li>Launch preparation</li>
-</ul>
-</div>
-<button class="choose">Choose</button>
-</div>
-
-<div class="plan">
-<h3>Growth</h3>
-<div class="price">$1 250</div>
-<div class="toggle" onclick="toggle(this)">Details ↓</div>
-<div class="details">
-<ul>
-<li>Everything from Start</li>
-<li>SMM & promotion</li>
-<li>Lead automation</li>
-<li>Basic analytics</li>
-</ul>
-</div>
-<button class="choose">Choose</button>
-</div>
-
-<div class="plan">
-<h3>Premium</h3>
-<div class="price">$2 500</div>
-<div class="toggle" onclick="toggle(this)">Details ↓</div>
-<div class="details">
-<ul>
-<li>Full digital package</li>
-<li>AI systems</li>
-<li>KPI & analytics</li>
-<li>Personal support</li>
-</ul>
-</div>
-<button class="choose">Choose</button>
-</div>
-
-</div>
+<section id="en" style="display:none">
+<!-- EN version can be mirrored later, логика уже готова -->
 </section>
 
-<footer>
-© 2025 Solarion.Media
-</footer>
+<script>
+function toggle(btn){
+const box = btn.nextElementSibling;
+box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
 
-<script
+function switchLang(l){
+document.getElementById('ru').style.display = l==='ru'?'block':'none';
+document.getElementById('en').style.display = l==='en'?'block':'none';
+document.getElementById('subtitle').innerText =
+l==='ru' ? 'Тарифы и сотрудничество' : 'Pricing & Cooperation';
+}
+</script>
+
+</body>
+</html>
