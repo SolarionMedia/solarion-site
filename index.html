@@ -1,185 +1,215 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Solarion.Media — AI-студия роста бизнеса</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<title>Solarion.Media — AI Digital Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- GOOGLE ANALYTICS -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-517112874"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-517112874');
-  </script>
+<style>
+:root{
+--bg:#0f1115;
+--card:#161a22;
+--accent:#4c7cff;
+--accent2:#6ea8ff;
+--text:#ffffff;
+--muted:#a0a6b5;
+}
 
-  <style>
-    :root{
-      --bg:#0b0b0f;
-      --card:#16161d;
-      --accent:#7aa2ff;
-      --text:#ffffff;
-      --muted:#9a9aab;
-    }
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
 
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif;}
+body{
+background:radial-gradient(circle at top,#1b1f2a,var(--bg));
+color:var(--text);
+line-height:1.6;
+}
 
-    body{
-      background:radial-gradient(circle at top,#1b1b2f,var(--bg));
-      color:var(--text);
-      line-height:1.6;
-    }
+header{
+text-align:center;
+padding:70px 20px;
+}
 
-    header,footer{
-      text-align:center;
-      padding:50px 20px;
-    }
+header h1{
+font-size:48px;
+color:var(--accent2);
+}
 
-    header h1{
-      font-size:38px;
-      margin-bottom:10px;
-    }
+header p{
+margin-top:15px;
+font-size:18px;
+color:var(--muted);
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+}
 
-    header p{
-      color:var(--muted);
-      max-width:700px;
-      margin:0 auto;
-    }
+.lang{
+margin-top:20px;
+}
+.lang button{
+background:none;
+border:none;
+color:var(--accent2);
+font-weight:700;
+cursor:pointer;
+margin:0 10px;
+font-size:14px;
+}
 
-    section{
-      max-width:1100px;
-      margin:0 auto;
-      padding:60px 20px;
-    }
+.hero-img{
+margin-top:40px;
+display:flex;
+justify-content:center;
+}
 
-    h2{
-      text-align:center;
-      font-size:32px;
-      margin-bottom:20px;
-    }
+.hero-img img{
+max-width:420px;
+width:100%;
+border-radius:20px;
+box-shadow:0 25px 70px rgba(76,124,255,.35);
+}
 
-    .sub{
-      text-align:center;
-      color:var(--muted);
-      max-width:720px;
-      margin:0 auto 50px;
-    }
+.cta{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
-    }
+.cta a{
+padding:16px 30px;
+border-radius:14px;
+text-decoration:none;
+font-weight:800;
+transition:.3s;
+}
 
-    .card{
-      background:linear-gradient(145deg,#1b1e26,#0f1115);
-      border-radius:22px;
-      padding:32px;
-      box-shadow:0 20px 50px rgba(0,0,0,.6);
-      transition:.3s;
-    }
+.primary{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#fff;
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      box-shadow:0 30px 70px rgba(0,0,0,.8);
-    }
+.primary:hover{
+transform:scale(1.07);
+box-shadow:0 20px 50px rgba(76,124,255,.5);
+}
 
-    .card h3{
-      font-size:24px;
-      margin-bottom:10px;
-      color:var(--accent);
-    }
+.secondary{
+border:2px solid var(--accent2);
+color:var(--accent2);
+}
 
-    .price{
-      font-size:30px;
-      margin:20px 0;
-    }
+.secondary:hover{
+background:var(--accent2);
+color:#000;
+}
 
-    .card ul{
-      list-style:none;
-      margin-bottom:25px;
-    }
+section{
+max-width:1000px;
+margin:0 auto;
+padding:60px 20px;
+}
 
-    .card li{
-      margin-bottom:10px;
-      color:#cfcfcf;
-    }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
 
-    .btn{
-      display:block;
-      text-align:center;
-      padding:14px;
-      border-radius:14px;
-      background:linear-gradient(135deg,#7aa2ff,#5a7cff);
-      color:#fff;
-      text-decoration:none;
-      font-weight:600;
-      transition:.25s;
-    }
+.card{
+background:linear-gradient(145deg,#1b1f2a,#0f1115);
+padding:25px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,.6);
+transition:.4s;
+}
 
-    .btn:hover{transform:scale(1.05);}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 70px rgba(76,124,255,.35);
+}
 
-    .note{
-      text-align:center;
-      margin-top:40px;
-      color:var(--muted);
-      font-size:14px;
-    }
+.card h3{color:var(--accent2)}
+.card p{color:var(--muted);margin-top:10px}
 
-    footer{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* POPUP */
-    .popup{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.7);
-      display:none;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .popup.active{display:flex;}
-
-    .popup-content{
-      background:var(--card);
-      padding:30px;
-      border-radius:18px;
-      width:90%;
-      max-width:380px;
-    }
-
-    .popup-content input,
-    .popup-content textarea{
-      width:100%;
-      margin-bottom:12px;
-      padding:12px;
-      border-radius:10px;
-      border:none;
-    }
-  </style>
+footer{
+text-align:center;
+padding:40px 20px;
+color:var(--muted);
+font-size:14px;
+border-top:1px solid rgba(255,255,255,.05);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Solarion.Media</h1>
-  <p>AI-студия, которая превращает контент, маркетинг и автоматизацию в поток заявок.</p>
+<h1 id="title">Solarion.Media</h1>
+<p id="subtitle">
+AI-студия для роста бизнеса, контента и автоматизации.
+Без хайпа. Только то, что реально приносит результат.
+</p>
+
+<div class="lang">
+<button onclick="switchLang('ru')">RU</button>
+<button onclick="switchLang('en')">EN</button>
+</div>
+
+<div class="hero-img">
+<img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="AI automation">
+</div>
+
+<div class="cta">
+<a class="primary" href="clients.html">Старт</a>
+<a class="secondary" href="mailto:solarionmedia@gmail.com">Связаться</a>
+</div>
 </header>
 
-<section>
-  <h2>Тарифы и решения</h2>
-  <p class="sub">
-    Прозрачные цены. Понятный результат.  
-    Мы не продаём часы — мы выстраиваем систему роста.
-  </p>
+<section id="benefits">
+<h2 id="why">Почему Solarion</h2>
 
-  <div class="cards">
+<div class="cards">
+<div class="card">
+<h3>AI-подход</h3>
+<p>Мы не делаем “контент ради контента”.  
+Каждое решение завязано на заявки, аналитику и рост.</p>
+</div>
 
-    <div class="card">
-      <h3>Старт</h3>
-      <div class="
+<div class="card">
+<h3>Системность</h3>
+<p>Контент, маркетинг и автоматизация объединены в одну логику.</p>
+</div>
 
+<div class="card">
+<h3>Результат</h3>
+<p>Вы понимаете, за что платите и какой результат получите.</p>
+</div>
+</div>
+</section>
+
+<footer>
+Беларусь, г. Минск, Аранская 8<br>
+Работаем ежедневно • 9:00 – 18:00<br><br>
+© 2025 Solarion.Media. All rights reserved.
+</footer>
+
+<script>
+function switchLang(l){
+if(l==='ru'){
+document.getElementById('title').innerText='Solarion.Media';
+document.getElementById('subtitle').innerText=
+'AI-студия для роста бизнеса, контента и автоматизации. Без хайпа. Только результат.';
+document.getElementById('why').innerText='Почему Solarion';
+}else{
+document.getElementById('title').innerText='Solarion.Media';
+document.getElementById('subtitle').innerText=
+'AI digital studio for business growth, content and automation. No hype. Only results.';
+document.getElementById('why').innerText='Why Solarion';
+}
+}
+</script>
+
+</body>
+</html>
