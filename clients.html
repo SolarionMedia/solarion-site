@@ -2,87 +2,160 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Solarion.Media — AI Studio</title>
+<title>Solarion.Media — AI Digital Studio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
-  --bg:#0b0d14;
-  --card:#161a2b;
-  --accent:#3b82f6;
-  --accent-hover:#2563eb;
-  --text:#ffffff;
-  --muted:#9ca3af;
+--bg:#0f1115;
+--card:#161a22;
+--accent:#4c7cff;
+--accent2:#6ea8ff;
+--text:#ffffff;
+--muted:#a0a6b5;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif;}
-body{background:var(--bg);color:var(--text);line-height:1.6;}
-header{text-align:center;padding:60px 20px;}
-header h1{font-size:2.6em;color:var(--accent);}
-header p{color:var(--muted);margin-top:10px;max-width:700px;margin-inline:auto;}
-.lang-switch{margin-top:20px;}
-.lang-switch button{
-  margin:0 6px;
-  padding:8px 16px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  background:#1f2937;
-  color:#fff;
-  font-weight:600;
-  transition:.3s;
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,Arial,sans-serif}
+
+body{
+background:radial-gradient(circle at top,#1b1f2a,var(--bg));
+color:var(--text);
+line-height:1.6;
 }
-.lang-switch button.active,
-.lang-switch button:hover{
-  background:var(--accent);
+
+header{
+text-align:center;
+padding:50px 20px;
 }
-section{padding:60px 20px;}
-h2{text-align:center;font-size:2.1em;margin-bottom:10px;}
-.sub{text-align:center;color:var(--muted);margin-bottom:40px;}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  max-width:1100px;
-  margin:auto;
+
+header h1{
+font-size:42px;
+color:var(--accent2);
 }
-.card{
-  background:linear-gradient(180deg,#1b2140,#12162a);
-  border-radius:22px;
-  padding:30px;
-  box-shadow:0 20px 50px rgba(0,0,0,.55);
-  transition:.4s;
+
+header p{
+margin-top:10px;
+color:var(--muted);
 }
-.card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 30px 70px rgba(0,0,0,.75);
+
+.lang{
+margin-top:15px;
 }
-.card h3{font-size:1.5em;color:var(--accent);}
-.price{font-size:1.8em;margin:18px 0;}
-.card ul{padding-left:18px;margin-bottom:22px;}
-.card li{margin-bottom:10px;}
-.btn{
-  display:block;
-  text-align:center;
-  padding:14px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-hover));
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  transition:.3s;
+
+.lang button{
+background:none;
+border:none;
+color:var(--accent2);
+font-weight:700;
+cursor:pointer;
+margin:0 10px;
+font-size:14px;
 }
-.btn:hover{transform:scale(1.08);}
-.btn-email{
-  margin-top:30px;
-  background:#0076ff;
+
+section{
+max-width:1100px;
+margin:0 auto;
+padding:50px 20px;
 }
-.btn-email:hover{background:#005adf;}
+
+h2{text-align:center;margin-bottom:40px}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.plan{
+background:linear-gradient(145deg,#1b1f2a,#0f1115);
+border-radius:20px;
+padding:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.6);
+transition:.4s;
+}
+
+.plan:hover{
+transform:translateY(-10px);
+box-shadow:0 30px 70px rgba(76,124,255,.35);
+}
+
+.plan h3{
+color:var(--accent2);
+margin-bottom:10px;
+}
+
+.price{
+font-size:28px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.toggle{
+cursor:pointer;
+color:var(--accent2);
+font-weight:600;
+margin-top:10px;
+}
+
+.details{
+display:none;
+margin-top:15px;
+color:var(--muted);
+}
+
+.details ul{margin-left:20px}
+
+button.choose{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+color:#fff;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+button.choose:hover{transform:scale(1.05)}
+
+.contacts{
+margin-top:60px;
+text-align:center;
+}
+
+.contact-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+}
+
+.contact-buttons a{
+padding:14px 22px;
+border-radius:14px;
+text-decoration:none;
+color:#fff;
+font-weight:700;
+transition:.3s;
+}
+
+.contact-buttons a:hover{
+transform:translateY(-5px) scale(1.05);
+}
+
+.email{background:#4c7cff}
+.telegram{background:#2ca5e0}
+.whatsapp{background:#25d366}
+.viber{background:#7360f2}
+
 footer{
-  text-align:center;
-  padding:50px 20px;
-  border-top:1px solid rgba(255,255,255,.1);
-  color:var(--muted);
-  font-size:.95em;
+text-align:center;
+padding:30px 20px;
+color:var(--muted);
+font-size:14px;
 }
 </style>
 </head>
@@ -90,91 +163,134 @@ footer{
 <body>
 
 <header>
-  <h1 id="title">Solarion.Media</h1>
-  <p id="subtitle">
-    AI-студия полного цикла. Контент, маркетинг и автоматизация,
-    которые превращают трафик в деньги.
-  </p>
-  <div class="lang-switch">
-    <button id="ruBtn" class="active" onclick="switchLang('ru')">RU</button>
-    <button id="enBtn" onclick="switchLang('en')">EN</button>
-  </div>
+<h1>Solarion.Media</h1>
+<p id="subtitle">AI-студия для роста бизнеса</p>
+<div class="lang">
+<button onclick="switchLang('ru')">RU</button>
+<button onclick="switchLang('en')">EN</button>
+</div>
 </header>
 
-<section>
-  <h2 id="pricingTitle">Тарифы и решения</h2>
-  <p class="sub" id="pricingSub">Средний рынок Беларуси • Прозрачные цены</p>
+<section id="content-ru">
+<h2>Тарифы</h2>
 
-  <div class="cards">
+<div class="pricing">
 
-    <div class="card">
-      <h3 id="p1">Старт</h3>
-      <div class="price" id="p1price">1 350 BYN</div>
-      <ul id="p1list">
-        <li>Анализ бизнеса и ниши</li>
-        <li>AI-стратегия роста</li>
-        <li>Контент-пак (офферы, тексты)</li>
-        <li>Рекомендации по заявкам</li>
-      </ul>
-      <a href="mailto:solarionmedia@gmail.com" class="btn">Выбрать</a>
-    </div>
+<div class="plan">
+<h3>Старт</h3>
+<div class="price">1 350 BYN</div>
+<div class="toggle" onclick="toggle(this)">Что входит ↓</div>
+<div class="details">
+<ul>
+<li>Анализ бизнеса</li>
+<li>Контент-стратегия</li>
+<li>AI-офферы</li>
+<li>Подготовка к запуску</li>
+</ul>
+</div>
+<button class="choose">Выбрать</button>
+</div>
 
-    <div class="card">
-      <h3 id="p2">Рост</h3>
-      <div class="price" id="p2price">3 750 BYN</div>
-      <ul id="p2list">
-        <li>Всё из тарифа «Старт»</li>
-        <li>SMM и продвижение</li>
-        <li>Автоматизация заявок</li>
-        <li>Системный рост лидов</li>
-      </ul>
-      <a href="mailto:solarionmedia@gmail.com" class="btn">Выбрать</a>
-    </div>
+<div class="plan">
+<h3>Рост</h3>
+<div class="price">3 750 BYN</div>
+<div class="toggle" onclick="toggle(this)">Что входит ↓</div>
+<div class="details">
+<ul>
+<li>Всё из тарифа «Старт»</li>
+<li>SMM и продвижение</li>
+<li>Автоматизация заявок</li>
+<li>Базовая аналитика</li>
+</ul>
+</div>
+<button class="choose">Выбрать</button>
+</div>
 
-    <div class="card">
-      <h3 id="p3">Премиум</h3>
-      <div class="price" id="p3price">7 500 BYN</div>
-      <ul id="p3list">
-        <li>Полный digital-пакет</li>
-        <li>AI-системы под бизнес</li>
-        <li>Аналитика и KPI</li>
-        <li>Личное сопровождение</li>
-      </ul>
-      <a href="mailto:solarionmedia@gmail.com" class="btn">Выбрать</a>
-    </div>
+<div class="plan">
+<h3>Premium</h3>
+<div class="price">7 500 BYN</div>
+<div class="toggle" onclick="toggle(this)">Что входит ↓</div>
+<div class="details">
+<ul>
+<li>Полный digital-пакет</li>
+<li>AI-системы</li>
+<li>KPI и аналитика</li>
+<li>Личное сопровождение</li>
+</ul>
+</div>
+<button class="choose">Выбрать</button>
+</div>
 
-  </div>
+</div>
 
-  <div style="max-width:420px;margin:50px auto 0;">
-    <a href="mailto:solarionmedia@gmail.com" class="btn btn-email">Email</a>
-  </div>
+<div class="contacts">
+<h2>Связаться с нами</h2>
+<p>Беларусь, г. Минск, Аранская 8<br>Пн–Вс • 9:00–18:00</p>
+
+<div class="contact-buttons">
+<a class="email" href="mailto:solarionmedia@gmail.com">Email</a>
+<a class="telegram" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
+<a class="whatsapp" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
+<a class="viber" href="viber://chat?number=%2B375296909200">Viber</a>
+</div>
+</div>
+</section>
+
+<section id="content-en" style="display:none">
+<h2>Pricing</h2>
+
+<div class="pricing">
+
+<div class="plan">
+<h3>Start</h3>
+<div class="price">$450</div>
+<div class="toggle" onclick="toggle(this)">Details ↓</div>
+<div class="details">
+<ul>
+<li>Business analysis</li>
+<li>Content strategy</li>
+<li>AI offers</li>
+<li>Launch preparation</li>
+</ul>
+</div>
+<button class="choose">Choose</button>
+</div>
+
+<div class="plan">
+<h3>Growth</h3>
+<div class="price">$1 250</div>
+<div class="toggle" onclick="toggle(this)">Details ↓</div>
+<div class="details">
+<ul>
+<li>Everything from Start</li>
+<li>SMM & promotion</li>
+<li>Lead automation</li>
+<li>Basic analytics</li>
+</ul>
+</div>
+<button class="choose">Choose</button>
+</div>
+
+<div class="plan">
+<h3>Premium</h3>
+<div class="price">$2 500</div>
+<div class="toggle" onclick="toggle(this)">Details ↓</div>
+<div class="details">
+<ul>
+<li>Full digital package</li>
+<li>AI systems</li>
+<li>KPI & analytics</li>
+<li>Personal support</li>
+</ul>
+</div>
+<button class="choose">Choose</button>
+</div>
+
+</div>
 </section>
 
 <footer>
-  <p>
-    Беларусь, г. Минск, ул. Аранская, 8<br>
-    Время работы: 9:00 – 18:00 • Без выходных
-  </p>
+© 2025 Solarion.Media
 </footer>
 
-<script>
-function switchLang(lang){
-  document.getElementById('ruBtn').classList.toggle('active',lang==='ru');
-  document.getElementById('enBtn').classList.toggle('active',lang==='en');
-
-  if(lang==='en'){
-    title.innerText='Solarion.Media';
-    subtitle.innerText='Full-cycle AI studio. Marketing, content and automation that drive revenue.';
-    pricingTitle.innerText='Pricing Plans';
-    pricingSub.innerText='Transparent pricing • Average EU market';
-    p1.innerText='Start';
-    p2.innerText='Growth';
-    p3.innerText='Premium';
-  }else{
-    location.reload();
-  }
-}
-</script>
-
-</body>
-</html>
+<script
