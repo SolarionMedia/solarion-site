@@ -2,8 +2,17 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Solarion.Media — Тарифы</title>
+<title>Solarion.Media — Pricing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-517112874"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-517112874');
+</script>
 
 <style>
 :root{
@@ -25,21 +34,18 @@ line-height:1.6;
 
 header{
 text-align:center;
-padding:40px 20px;
+padding:50px 20px;
 }
 
-header h1{font-size:40px;color:var(--accent2)}
-header p{color:var(--muted);margin-top:8px}
+header h1{font-size:42px;color:var(--accent2)}
+header p{color:var(--muted);margin-top:10px}
 
-.lang{
-margin-top:12px;
-}
 .lang button{
 background:none;border:none;
 color:var(--accent2);
 font-weight:700;
-cursor:pointer;
 margin:0 8px;
+cursor:pointer;
 }
 
 section{
@@ -72,7 +78,7 @@ box-shadow:0 30px 70px rgba(76,124,255,.35);
 
 ul{margin-left:18px;color:var(--muted)}
 
-button.choose{
+.choose{
 margin-top:18px;
 width:100%;
 padding:14px;
@@ -82,10 +88,7 @@ background:linear-gradient(135deg,var(--accent),var(--accent2));
 color:#fff;
 font-weight:700;
 cursor:pointer;
-transition:.3s;
 }
-
-button.choose:hover{transform:scale(1.05)}
 
 .deep{
 display:none;
@@ -93,47 +96,38 @@ margin-top:15px;
 background:#0f1115;
 border-radius:14px;
 padding:15px;
-font-size:14px;
 color:var(--muted);
+font-size:14px;
 }
 
-.contacts{
+form{
+margin-top:15px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input, textarea{
+padding:12px;
+border-radius:10px;
+border:none;
+}
+
+.submit{
+background:#4c7cff;
+color:#fff;
+border:none;
+padding:12px;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+footer{
 text-align:center;
 margin-top:60px;
-}
-
-.contact-buttons{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-margin-top:20px;
-}
-
-.contact-buttons a{
-padding:14px 22px;
-border-radius:14px;
-text-decoration:none;
-color:#fff;
-font-weight:700;
-transition:.3s;
-}
-
-.contact-buttons a:hover{
-transform:translateY(-5px) scale(1.05);
-}
-
-.email{background:#4c7cff}
-.telegram{background:#2ca5e0}
-.whatsapp{background:#25d366}
-.viber{background:#7360f2}
-
-.back{
-display:inline-block;
-margin-top:30px;
-color:var(--accent2);
-text-decoration:none;
-font-weight:700;
+color:var(--muted);
+font-size:14px;
 }
 </style>
 </head>
@@ -141,7 +135,7 @@ font-weight:700;
 <body>
 
 <header>
-<h1>Solarion.Media</h1>
+<h1 id="title">Solarion.Media</h1>
 <p id="subtitle">Тарифы и сотрудничество</p>
 <div class="lang">
 <button onclick="switchLang('ru')">RU</button>
@@ -153,100 +147,105 @@ font-weight:700;
 
 <div class="pricing">
 
+<!-- START -->
 <div class="plan">
 <h3>Старт</h3>
 <div class="price">1 350 BYN</div>
 <ul>
-<li>Анализ бизнеса и ниши</li>
-<li>AI-стратегия роста</li>
+<li>Анализ бизнеса</li>
+<li>AI-стратегия</li>
 <li>Контент-пак</li>
-<li>Рекомендации по заявкам</li>
 </ul>
 
-<button class="choose" onclick="toggle(this)">Выбрать</button>
+<button class="choose" onclick="openPlan(this,'Start')">Выбрать</button>
 
 <div class="deep">
-<b>Что вы получите:</b><br>
-Чёткое понимание, как привлекать клиентов с помощью AI,  
-готовые тексты и офферы + план действий на 30 дней.
-<br><br>
-<b>Подходит:</b> малому бизнесу и личным брендам.
+<p>Чёткий план роста + готовые материалы на 30 дней.</p>
+
+<form onsubmit="sendForm(event,'Start')">
+<input type="hidden" name="plan" value="Start">
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Кратко о задаче"></textarea>
+<button class="submit">Отправить</button>
+</form>
 </div>
 </div>
 
+<!-- GROWTH -->
 <div class="plan">
 <h3>Рост</h3>
 <div class="price">3 750 BYN</div>
 <ul>
-<li>Всё из «Старт»</li>
-<li>SMM и продвижение</li>
-<li>Автоматизация заявок</li>
-<li>Аналитика</li>
+<li>Продвижение</li>
+<li>SMM</li>
+<li>Автоматизация</li>
 </ul>
 
-<button class="choose" onclick="toggle(this)">Выбрать</button>
+<button class="choose" onclick="openPlan(this,'Growth')">Выбрать</button>
 
 <div class="deep">
-<b>Результат:</b><br>
-Стабильный поток заявок, автоматизированные ответы,
-системный маркетинг вместо хаоса.
-<br><br>
-<b>Подходит:</b> компаниям, которые хотят масштаб.
+<p>Системный маркетинг и стабильные заявки.</p>
+
+<form onsubmit="sendForm(event,'Growth')">
+<input type="hidden" name="plan" value="Growth">
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Кратко о задаче"></textarea>
+<button class="submit">Отправить</button>
+</form>
 </div>
 </div>
 
+<!-- PREMIUM -->
 <div class="plan">
 <h3>Premium</h3>
 <div class="price">7 500 BYN</div>
 <ul>
-<li>Полный digital-пак</li>
 <li>AI-системы</li>
-<li>KPI и аналитика</li>
-<li>Личное сопровождение</li>
+<li>KPI</li>
+<li>Аналитика</li>
 </ul>
 
-<button class="choose" onclick="toggle(this)">Выбрать</button>
+<button class="choose" onclick="openPlan(this,'Premium')">Выбрать</button>
 
 <div class="deep">
-<b>Результат:</b><br>
-AI как часть бизнеса: заявки, аналитика, решения по цифрам.
-<br><br>
-<b>Формат:</b> партнёрство.
+<p>AI как часть бизнеса. Работа по цифрам.</p>
+
+<form onsubmit="sendForm(event,'Premium')">
+<input type="hidden" name="plan" value="Premium">
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Кратко о задаче"></textarea>
+<button class="submit">Отправить</button>
+</form>
 </div>
 </div>
 
 </div>
 
-<div class="contacts">
-<p>Беларусь, г. Минск, Аранская 8<br>Пн–Вс • 9:00–18:00</p>
+<footer>
+Беларусь, Минск • 9:00–18:00 • Без выходных<br>
+© 2025 Solarion.Media
+</footer>
 
-<div class="contact-buttons">
-<a class="email" href="mailto:solarionmedia@gmail.com">Email</a>
-<a class="telegram" href="https://t.me/SolarionMedia" target="_blank">Telegram</a>
-<a class="whatsapp" href="https://wa.me/375296909200" target="_blank">WhatsApp</a>
-<a class="viber" href="viber://chat?number=%2B375296909200">Viber</a>
-</div>
-
-<a class="back" href="index.html">← На главную</a>
-</div>
-
-</section>
-
-<section id="en" style="display:none">
-<!-- EN version can be mirrored later, логика уже готова -->
 </section>
 
 <script>
-function toggle(btn){
+function openPlan(btn,plan){
+gtag('event','choose_click',{plan:plan});
 const box = btn.nextElementSibling;
-box.style.display = box.style.display === 'block' ? 'none' : 'block';
+box.style.display = box.style.display==='block'?'none':'block';
+}
+
+function sendForm(e,plan){
+e.preventDefault();
+gtag('event','form_submit',{plan:plan});
+alert('Заявка отправлена. Мы свяжемся с вами.');
+e.target.reset();
 }
 
 function switchLang(l){
 document.getElementById('ru').style.display = l==='ru'?'block':'none';
-document.getElementById('en').style.display = l==='en'?'block':'none';
 document.getElementById('subtitle').innerText =
-l==='ru' ? 'Тарифы и сотрудничество' : 'Pricing & Cooperation';
+l==='ru'?'Тарифы и сотрудничество':'Pricing & Cooperation';
 }
 </script>
 
